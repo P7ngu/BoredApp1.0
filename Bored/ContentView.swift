@@ -5,6 +5,8 @@
 //  Created by Matteo Perotta on 17/10/23.
 //
 
+//This is the Today challenges
+
 import SwiftUI
 
 struct ContentView: View {
@@ -25,10 +27,6 @@ struct ContentView: View {
     }
 }
     
-
-
-var 
-
 
 #Preview {
     ContentView()
