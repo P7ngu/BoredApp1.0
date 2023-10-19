@@ -10,7 +10,7 @@ import SwiftUI
 struct AchievementDetailedView: View {
     var viewmodel = AchievementsViewModel()
     
-    var achievement = Achievement(name: "Test achievement", content: "Test content", completed: true)
+    var achievement = Achievement(name: "Test achievement", content: "Test content", completed: false, completitionStatus: 0.8)
     
     var body: some View {
         
@@ -24,12 +24,14 @@ struct AchievementDetailedView: View {
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .padding()
                 
+                ProgressView(value: achievement.completitionStatus).padding(50)
+                
                 Text(achievement.name + ": ")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                 
                 Text(achievement.content)
-                    .font(.callout)
+                    .font(.callout).padding()
             }
         }
     }

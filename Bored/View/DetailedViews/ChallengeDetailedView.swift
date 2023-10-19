@@ -28,7 +28,7 @@ struct ChallengeDetailedView: View {
                     .bold()
                 
                 Text(challenge.content)
-                    .font(.callout)
+                    .font(.callout).padding()
             }
         }
     }

@@ -20,6 +20,9 @@ struct ContentView: View {
                     VStack {
                         ZStack{
                             VStack{
+                                Text(viewmodel.challenges[daycounter].name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    .foregroundStyle(.red)
+                                
                                 Image(viewmodel.challenges[daycounter].imageName)
                                     .resizable()
                                     .dynamicTypeSize(.medium)
@@ -28,10 +31,24 @@ struct ContentView: View {
                                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                     .opacity(0.5)
                                     .padding(10)
+                                Text(viewmodel.challenges[daycounter].content).padding()
                                 
-                                Button("Show Details"){
-                                    
+                                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("Challenge")) {
+                                    Text("Challenge not accepted").tag(1)
+                                    Text("Challenge accepted!").tag(2)
                                 }
+                                
+                                
+                               /*
+                                NavigationLink{
+                                    ChallengeDetailedView(challenge: viewmodel.challenges[daycounter])
+                                }label: {
+                                    Button("Show Details"){
+                                        
+                                        
+                                    }
+                                }
+                                 */
                                 
                             }
                             

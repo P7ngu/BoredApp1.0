@@ -15,7 +15,7 @@ struct Achievement: Identifiable{
     var content: String;
     var color: Color = .blue;
     var completed: Bool = false;
-    var completitionStatus: Int = 0; //from 0 to 100
+    var completitionStatus: Double = 0; //from 0 to 1
     var imageName: String = "noimage";
     
 }

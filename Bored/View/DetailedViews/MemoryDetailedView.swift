@@ -29,7 +29,7 @@ struct MemoryDetailedView: View {
                     .bold()
                 
                 Text(memory.content)
-                    .font(.callout)
+                    .font(.callout).padding()
             }
         }
     }

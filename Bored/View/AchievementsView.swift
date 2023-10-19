@@ -28,6 +28,7 @@ struct AchievementsView: View {
                             Text (achievement.name).bold()
                             
                         }.padding()
+                        ProgressView(value: achievement.completitionStatus)
                     }
                     //.padding()
                 }
