@@ -22,12 +22,12 @@ struct MemoriesView: View {
                     } label: {
                         HStack {
                             //opposite to VStack, there is also ZStack
-                            Image(systemName: "person.fill")
+                            Image(systemName: "puzzlepiece.extension.fill")
                                 .imageScale(.large)
                                 .foregroundStyle(.blue);
-                            Text (memory.name)
-                            Text (memory.content)
-                        }
+                            Text (memory.name).bold()
+                           
+                        }.padding()
                     }
                     //.padding()
                 }

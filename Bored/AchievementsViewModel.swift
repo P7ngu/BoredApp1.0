@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+class AchievementsViewModel{
+    var achievements: [Achievement] = [
+        Achievement(name: "The best in the game", content: "Complete all the challenges")
+       
+    ]
+}

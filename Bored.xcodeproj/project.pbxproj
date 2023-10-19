@@ -13,6 +13,8 @@
 		6365D2F52AE120310019170B /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F42AE120310019170B /* MemoryViewModel.swift */; };
 		6365D2F72AE120D10019170B /* MemoryDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F62AE120D10019170B /* MemoryDetailedView.swift */; };
 		6365D2F92AE122930019170B /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F82AE122930019170B /* AchievementsViewModel.swift */; };
+		6365D2FB2AE124420019170B /* AchievementDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2FA2AE124420019170B /* AchievementDetailedView.swift */; };
+		6365D2FD2AE124940019170B /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2FC2AE124940019170B /* AchievementModel.swift */; };
 		6388B7032ADE940300CCA6B6 /* BoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388B7022ADE940300CCA6B6 /* BoredApp.swift */; };
 		6388B7052ADE940300CCA6B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388B7042ADE940300CCA6B6 /* ContentView.swift */; };
 		6388B7072ADE940500CCA6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6388B7062ADE940500CCA6B6 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		6365D2F42AE120310019170B /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
 		6365D2F62AE120D10019170B /* MemoryDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailedView.swift; sourceTree = "<group>"; };
 		6365D2F82AE122930019170B /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		6365D2FA2AE124420019170B /* AchievementDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailedView.swift; sourceTree = "<group>"; };
+		6365D2FC2AE124940019170B /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		6388B6FF2ADE940300CCA6B6 /* Bored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6388B7022ADE940300CCA6B6 /* BoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredApp.swift; sourceTree = "<group>"; };
 		6388B7042ADE940300CCA6B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,10 +76,11 @@
 				6365D2F42AE120310019170B /* MemoryViewModel.swift */,
 				6365D2F22AE11EBC0019170B /* AchievementsView.swift */,
 				6365D2F02AE11E690019170B /* MemoriesView.swift */,
+				6365D2F62AE120D10019170B /* MemoryDetailedView.swift */,
+				6365D2FA2AE124420019170B /* AchievementDetailedView.swift */,
+				6365D2F82AE122930019170B /* AchievementsViewModel.swift */,
 				6388B7062ADE940500CCA6B6 /* Assets.xcassets */,
 				6388B7082ADE940500CCA6B6 /* Preview Content */,
-				6365D2F62AE120D10019170B /* MemoryDetailedView.swift */,
-				6365D2F82AE122930019170B /* AchievementsViewModel.swift */,
 			);
 			path = Bored;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				63D5219C2ADFE53A00EAE4BC /* ChallengeModel.swift */,
+				6365D2FC2AE124940019170B /* AchievementModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,12 +172,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6365D2FD2AE124940019170B /* AchievementModel.swift in Sources */,
 				6365D2F52AE120310019170B /* MemoryViewModel.swift in Sources */,
 				6365D2F12AE11E690019170B /* MemoriesView.swift in Sources */,
 				63D5219D2ADFE53A00EAE4BC /* ChallengeModel.swift in Sources */,
 				6365D2F72AE120D10019170B /* MemoryDetailedView.swift in Sources */,
 				6388B7052ADE940300CCA6B6 /* ContentView.swift in Sources */,
 				6365D2F92AE122930019170B /* AchievementsViewModel.swift in Sources */,
+				6365D2FB2AE124420019170B /* AchievementDetailedView.swift in Sources */,
 				6365D2EF2AE118A10019170B /* ChallengeViewModel.swift in Sources */,
 				6365D2F32AE11EBC0019170B /* AchievementsView.swift in Sources */,
 				6388B7032ADE940300CCA6B6 /* BoredApp.swift in Sources */,

@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct AchievementsView: View {
+    var viewmodel = AchievementsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack{
+            List {
+                ForEach(viewmodel.achievements){ achievement in
+                    
+                    NavigationLink{
+                        AchievementDetailedView(achievement: achievement)
+                        
+                    } label: {
+                        HStack {
+                            //opposite to VStack, there is also ZStack
+                            Image(systemName: "puzzlepiece.extension.fill")
+                                .imageScale(.large)
+                                .foregroundStyle(.blue);
+                            Text (achievement.name).bold()
+                            
+                        }.padding()
+                    }
+                    //.padding()
+                }
+            }.navigationTitle("Achievements")
+        }
     }
 }
 
