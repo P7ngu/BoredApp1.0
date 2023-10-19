@@ -11,23 +11,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("hi")
-        
-        ScrollView{
-            VStack {
-                
-                
-                
-                
-                
-                
-                
+        NavigationStack{
+            
+            ScrollView{
+                VStack {
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                .padding()
             }
-            .padding()
         }
     }
 }
-    
+
 #Preview {
     ContentView()
 }

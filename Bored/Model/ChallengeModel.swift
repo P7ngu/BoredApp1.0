@@ -15,5 +15,6 @@ struct Challenge: Identifiable{
     var content: String;
     var color: Color = .blue;
     var completed: Bool = false; //if it has been completed then it is also a memory
+    var imageName: String = "noimage";
     
 }
