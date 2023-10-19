@@ -12,6 +12,7 @@ import SwiftUI
 struct ContentView: View {
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
+    var totalClicked: Int = 0
     
     var body: some View {
         TabView{
@@ -35,26 +36,43 @@ struct ContentView: View {
                                 
                             }
                             
+                            
+                            
+                            
                         }
                     }
+                    
+                    
+                    
                     .padding()
                 }.navigationTitle("Today's Challenge is:")
-            }
-            .tabItem {
-                Label("Today", systemImage: "cloud.sun")
-            }
-            MemoriesView()
-                .tabItem{
-                    Label ("Memories", systemImage: "memories")
-                }
-            AchievementsView()
-                .tabItem{
-                    Label("Achievements", systemImage: "trophy.fill")
-                }
-        } //end of tabview
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    .tabItem {
+                        Label("Today", systemImage: "cloud.sun")
+                    }
+                MemoriesView()
+                    .tabItem{
+                        Label ("Memories", systemImage: "memories")
+                    }
+                AchievementsView()
+                    .tabItem{
+                        Label("Achievements", systemImage: "trophy.fill")
+                    }
+            } //end of tabview
+        }
     }
-}
-
-#Preview {
-    ContentView()
+    
+    #Preview {
+        ContentView()
+    }
 }
