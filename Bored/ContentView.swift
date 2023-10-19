@@ -14,39 +14,44 @@ struct ContentView: View {
     var daycounter = 0;
     
     var body: some View {
-        NavigationStack{
-            
-            ScrollView{
-                VStack {
-                    ZStack{
-                        VStack{
-                            Image(viewmodel.challenges[daycounter].imageName)
-                                .resizable()
-                                .dynamicTypeSize(.medium)
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(Rectangle())
-                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                .opacity(0.5)
-                                .padding(10)
-                            
-                            Button("Show Details"){
+        TabView{
+            NavigationStack{
+                ScrollView{
+                    VStack {
+                        ZStack{
+                            VStack{
+                                Image(viewmodel.challenges[daycounter].imageName)
+                                    .resizable()
+                                    .dynamicTypeSize(.medium)
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(Rectangle())
+                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                    .opacity(0.5)
+                                    .padding(10)
+                                
+                                Button("Show Details"){
+                                    
+                                }
                                 
                             }
                             
                         }
-                        
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    .padding()
+                }.navigationTitle("Today's Challenge is:")
+            }
+            .tabItem {
+                Label("Today", systemImage: "cloud.sun")
+            }
+            MemoriesView()
+                .tabItem{
+                    Label ("Memories", systemImage: "memories")
                 }
-                .padding()
-            }.navigationTitle("Today's Challenge is:")
-        }
+            AchievementsView()
+                .tabItem{
+                    Label("Achievements", systemImage: "trophy.fill")
+                }
+        } //end of tabview
     }
 }
 
