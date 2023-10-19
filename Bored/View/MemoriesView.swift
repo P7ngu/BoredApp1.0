@@ -9,12 +9,13 @@ import SwiftUI
 
 struct MemoriesView: View {
     var viewmodel = MemoryViewModel()
+    var completedChallenges = MemoryViewModel().checkMemoriesFromChallenges()
     
     var body: some View {
         
         NavigationStack{
             List {
-                ForEach(viewmodel.memories){ memory in
+                ForEach(completedChallenges){ memory in
                     
                     NavigationLink{
                         MemoryDetailedView(memory: memory)

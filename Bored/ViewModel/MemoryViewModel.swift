@@ -6,14 +6,35 @@
 //
 
 import Foundation
-import SwiftUI
 
-class MemoryViewModel{
-    var memories = [
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to...")
-    ]
+class MemoryViewModel {
+    
+    var challenges: [Challenge] = []
+    
+    var completedChallenges: [Challenge] = []
+    
+    func getChallenges()-> [Challenge]{
+        var challviewmodel = ChallengeViewModel()
+        challenges = challviewmodel.challenges
+        return challenges
+        
+    }
+        
+    func checkMemoriesFromChallenges() -> [Challenge] {
+        
+        challenges=getChallenges()
+        for challenge in challenges {
+            
+            if challenge.completed {
+                completedChallenges.append(challenge)
+            } else {
+                
+            }
+            
+        }
+        
+        return completedChallenges
+    }
+    
 }
+

@@ -10,8 +10,8 @@ import SwiftUI
 
 class ChallengeViewModel{
     var challenges = [
-    Challenge(name: "Nature Walking", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel"),
-    Challenge(name: "Morning Coffee", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day."),
+    Challenge(name: "Nature Walking", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", completed: true),
+    Challenge(name: "Morning Coffee", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", completed: true),
     Challenge(name: "Challenge 3: Doodle or Sketch", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process"),
     Challenge(name: "Healthy Snack", content: "For this challenge you need to... Prepare a quick, healthy snack, photograph it, and reflect on the importance of nourishing your body."),
     Challenge(name: "Sunset/Sunrise", content: "For this challenge you need to... Take a photo of the sunset or sunrise and reflect on the beauty of the natural world."),
