@@ -38,6 +38,7 @@ struct ContentView: View {
                                 
                                 Text(viewmodel.challenges[daycounter].content).padding()
                                 
+
                                 Picker(
                                     selection: $selection,
                                       label:
@@ -52,6 +53,8 @@ struct ContentView: View {
                                             .tag(option)}
                                     })
                                 .pickerStyle(.segmented)
+
+
                                 
                                 
                                 /*

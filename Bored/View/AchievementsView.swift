@@ -9,12 +9,14 @@ import SwiftUI
 
 struct AchievementsView: View {
     var viewmodel = AchievementsViewModel()
+    var achievements = AchievementsViewModel().checkAchievementCompletitionRate()
     
     var body: some View {
         
         NavigationStack{
             List {
-                ForEach(viewmodel.achievements){ achievement in
+                
+                ForEach(achievements){ achievement in
                     
                     NavigationLink{
                         AchievementDetailedView(achievement: achievement)

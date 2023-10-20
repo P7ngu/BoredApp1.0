@@ -20,8 +20,7 @@ class MemoryViewModel {
         
     }
         
-    func checkMemoriesFromChallenges() -> [Challenge] {
-        
+    func checkCompletedChallenges() -> [Challenge] {
         challenges=getChallenges()
         for challenge in challenges {
             
