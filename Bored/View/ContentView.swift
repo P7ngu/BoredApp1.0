@@ -13,6 +13,10 @@ struct ContentView: View {
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
     
+    @State var isPickerShowing = false
+    
+    @State var selectedImage: UIImage = UIImage()
+    
     @State var selection: String = "Unaccepted"
     let filterOptions: [String] = ["Unaccepted", "Accepted"]
     
@@ -27,21 +31,41 @@ struct ContentView: View {
                                 Text(viewmodel.challenges[daycounter].name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.red)
                                 
-                               Image(viewmodel.challenges[daycounter].imageName)
-                                    .resizable()
-                                    .dynamicTypeSize(.medium)
-                                    .aspectRatio(contentMode: .fit)
-                                    .clipShape(Rectangle())
-                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                    .opacity(0.5)
-                                    .padding(10)
+                                ZStack{
+                                    Image(viewmodel.challenges[daycounter].imageName)
+                                        .resizable()
+                                        .dynamicTypeSize(.medium)
+                                        .aspectRatio(contentMode: .fit)
+                                        .clipShape(Rectangle())
+                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                        .opacity(0.5)
+                                        .padding(10)
+                                    if (selectedImage != nil){
+                                        Image (uiImage: selectedImage)
+                                            .resizable()
+                                            .frame(width: 300, height: 300)
+                                            .padding()
+                                    } else {
+                                        Image(viewmodel.challenges[daycounter].imageName)
+                                            .resizable()
+                                            .dynamicTypeSize(.medium)
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Rectangle())
+                                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                            .opacity(0.5)
+                                            .padding(10)
+                                    }
+                                   
+                                }
+                                
                                 
                                 Text(viewmodel.challenges[daycounter].content).padding()
                                 
-
+                                
+                                
                                 Picker(
                                     selection: $selection,
-                                      label:
+                                    label:
                                         HStack {
                                             Text("Challange:")
                                             Text(selection)
@@ -53,27 +77,25 @@ struct ContentView: View {
                                             .tag(option)}
                                     })
                                 .pickerStyle(.segmented)
-
-
                                 
-                                
-                                /*
-                                 NavigationLink{
-                                 ChallengeDetailedView(challenge: viewmodel.challenges[daycounter])
-                                 }label: {
-                                 Button("Show Details"){
-                                 
-                                 
-                                 }
-                                 }
-                                 */
+                                Button{
+                                    isPickerShowing = true
+                                } label: {
+                                    Text("Select a Photo")
+                                }
+                                .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
+                                    
+                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                                    
+                                }
                                 
                             }
                             
                         }
+                        
                     }
                     .padding()
-             }
+                }
                 .navigationTitle("Today's Challenge is:")
             }
             .tabItem {
@@ -89,6 +111,7 @@ struct ContentView: View {
                 }
         } //end of tabview
     }
+    
 }
 
 #Preview {
