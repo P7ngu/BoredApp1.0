@@ -13,6 +13,10 @@ struct ContentView: View {
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
     
+    var currentDate = Time().getCurrentDate()
+   
+    
+    
     @State var isPickerShowing = false
     
     @State var selectedImage: UIImage = UIImage()
@@ -28,8 +32,10 @@ struct ContentView: View {
                     VStack {
                         ZStack{
                             VStack{
+                                
                                 Text(viewmodel.challenges[daycounter].name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.red)
+                                Text(currentDate)
                                 
                                 ZStack{
                                     Image(viewmodel.challenges[daycounter].imageName)
@@ -40,20 +46,13 @@ struct ContentView: View {
                                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                         .opacity(0.5)
                                         .padding(10)
+                                        .frame(width: 300, height: 300)
+                                    
                                     if (selectedImage != nil){
                                         Image (uiImage: selectedImage)
                                             .resizable()
                                             .frame(width: 300, height: 300)
                                             .padding()
-                                    } else {
-                                        Image(viewmodel.challenges[daycounter].imageName)
-                                            .resizable()
-                                            .dynamicTypeSize(.medium)
-                                            .aspectRatio(contentMode: .fit)
-                                            .clipShape(Rectangle())
-                                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                            .opacity(0.5)
-                                            .padding(10)
                                     }
                                    
                                 }

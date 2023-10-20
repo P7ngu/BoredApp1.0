@@ -58,6 +58,8 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
             DispatchQueue.main.async {
                 // We succeded retrieving th eimage
                 self.parent.selectedImage = image
+               // ChallengeViewModel().updateChallenge
+                
             }
         }
         //Dismsis picker
