@@ -33,7 +33,7 @@ struct ContentView: View {
                                     .padding(10)
                                 Text(viewmodel.challenges[daycounter].content).padding()
                                 
-                                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("Challenge")) {
+                                Picker(selection: .constant(1), label: Text("Challenge")) {
                                     Text("Challenge not accepted").tag(1)
                                     Text("Challenge accepted!").tag(2)
                                 }

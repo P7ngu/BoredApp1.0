@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoriesView: View {
     var viewmodel = MemoryViewModel()
-    var completedChallenges = MemoryViewModel().checkMemoriesFromChallenges()
+    var completedChallenges = MemoryViewModel().checkCompletedChallenges()
     
     var body: some View {
         
