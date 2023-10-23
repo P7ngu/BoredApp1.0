@@ -16,7 +16,7 @@ class AchievementsViewModel{
     
     var achievements: [Achievement] = [
         Achievement(name: "First goaaaal!", content: "Complete your first challenge",
-                    completitionMaxPoints: 1.0, completitionPoints: 2.0, imageName: "trophy1"),
+                    completitionMaxPoints: 1.0, completitionPoints: 2.0, imageName: "trofeo"),
         Achievement(name: "Dante's Paradiso", content: "Complete 3 challenges",
                     completitionMaxPoints: 3.0, completitionPoints: 2.0, imageName: "trophy2"),
         Achievement (name: "5some", content: "Complete 5 challenges",
@@ -56,7 +56,7 @@ class AchievementsViewModel{
             
             //print(updatedCompletitionStatus)
             
-            var updatedAchievement = Achievement(name: achievement.name, content: achievement.content, completitionStatus: updatedCompletitionStatus, completitionMaxPoints: achievement.completitionMaxPoints, completitionPoints: numOfCompletedChallenges)
+            var updatedAchievement = Achievement(name: achievement.name, content: achievement.content, completitionStatus: updatedCompletitionStatus, completitionMaxPoints: achievement.completitionMaxPoints, completitionPoints: numOfCompletedChallenges, imageName: achievement.imageName)
             
           
             
