@@ -23,7 +23,7 @@ struct MemoriesView: View {
                     } label: {
                         HStack {
                             //opposite to VStack, there is also ZStack
-                            Image(systemName: "puzzlepiece.extension.fill")
+                            Image(systemName: "checkmark.seal.fill")
                                 .imageScale(.large)
                                 .foregroundStyle(.blue);
                             Text (memory.name).bold()

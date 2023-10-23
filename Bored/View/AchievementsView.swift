@@ -24,10 +24,11 @@ struct AchievementsView: View {
                     } label: {
                         HStack {
                             //opposite to VStack, there is also ZStack
-                            Image(systemName: "puzzlepiece.extension.fill")
+                            Image(systemName: "flag.checkered.2.crossed")
                                 .imageScale(.large)
                                 .foregroundStyle(.blue);
                             Text (achievement.name).bold()
+                                .scaledToFill()
                             
                         }.padding()
                         ProgressView(value: achievement.completitionStatus)
