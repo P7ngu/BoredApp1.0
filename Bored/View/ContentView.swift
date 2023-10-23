@@ -12,10 +12,10 @@ import SwiftUI
 struct ContentView: View {
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
+    var currentChallenge = ChallengeViewModel().getTodaysChallenge()
+    //var currentDate = Time().getCurrentDate()
     
-    var currentDate = Time().getCurrentDate()
    
-    
     
     @State var isPickerShowing = false
     
@@ -32,13 +32,12 @@ struct ContentView: View {
                     VStack {
                         ZStack{
                             VStack{
-                                
-                                Text(viewmodel.challenges[daycounter].name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                Text(currentChallenge.name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.red)
-                                Text(currentDate)
+                                Text(currentChallenge.assignedDate).font(.title3)
                                 
                                 ZStack{
-                                    Image(viewmodel.challenges[daycounter].imageName)
+                                    Image(currentChallenge.imageName)
                                         .resizable()
                                         .dynamicTypeSize(.medium)
                                         .aspectRatio(contentMode: .fit)
@@ -58,7 +57,7 @@ struct ContentView: View {
                                 }
                                 
                                 
-                                Text(viewmodel.challenges[daycounter].content).padding()
+                                Text(currentChallenge.content).padding()
                                 
                                 
                                 

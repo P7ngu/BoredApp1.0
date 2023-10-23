@@ -14,8 +14,8 @@ class Time{
         let currentDateTime = Date()
         let formatter = DateFormatter();
         
-        formatter.timeStyle = .medium;
-        formatter.dateStyle = .long;
+        formatter.timeStyle = .none;
+        formatter.dateStyle = .short;
         
         let dateTimeString = formatter.string(from: currentDateTime)
         print(dateTimeString)

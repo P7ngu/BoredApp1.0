@@ -54,7 +54,7 @@ class AchievementsViewModel{
         for achievement in achievements {
             var updatedCompletitionStatus = ((numOfCompletedChallenges) / (achievement.completitionMaxPoints))
             
-            print(updatedCompletitionStatus)
+            //print(updatedCompletitionStatus)
             
             var updatedAchievement = Achievement(name: achievement.name, content: achievement.content, completitionStatus: updatedCompletitionStatus, completitionMaxPoints: achievement.completitionMaxPoints, completitionPoints: numOfCompletedChallenges)
             
