@@ -34,7 +34,7 @@ struct ContentView: View {
                             VStack{
                                 Text(currentChallenge.name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(.red)
-                                Text(currentChallenge.assignedDate).font(.title3)
+                                //Text(currentChallenge.assignedDate).font(.title3)
                                 
                                 ZStack{
                                     Image(currentChallenge.imageName)

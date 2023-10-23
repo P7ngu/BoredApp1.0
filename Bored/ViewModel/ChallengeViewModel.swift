@@ -30,11 +30,11 @@ class ChallengeViewModel{
     }
     
     var challenges = [
-    Challenge(name: "Nature Walking", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", completed: true, assignedDate: "21/10/2023"),
-    Challenge(name: "Morning Coffee", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", completed: true, assignedDate: "22/10/2023"),
-    Challenge(name: "Doodle or Sketch", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process", assignedDate: "23/10/23"),
-    Challenge(name: "Healthy Snack", content: "For this challenge you need to... Prepare a quick, healthy snack, photograph it, and reflect on the importance of nourishing your body.", assignedDate: "24/10/2023"),
-    Challenge(name: "Sunset/Sunrise", content: "For this challenge you need to... Take a photo of the sunset or sunrise and reflect on the beauty of the natural world.", assignedDate: "25/10/2023"),
+    Challenge(name: "Nature Walking", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", completed: true, assignedDate: "01"),
+    Challenge(name: "Morning Coffee", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", completed: true, assignedDate: "02"),
+    Challenge(name: "Doodle or Sketch", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process", assignedDate: "03"),
+    Challenge(name: "Healthy Snack", content: "For this challenge you need to... Prepare a quick, healthy snack, photograph it, and reflect on the importance of nourishing your body.", assignedDate: "04"),
+    Challenge(name: "Sunset/Sunrise", content: "For this challenge you need to... Take a photo of the sunset or sunrise and reflect on the beauty of the natural world.", assignedDate: "23"),
     Challenge(name: "Favourite Book Page", content: "For this challenge you need to... Open your favourite book to a random page, read a passage, take a photo, and reflect on the words' meaning in your life.", assignedDate: "26/10/2023"),
     Challenge(name: "Yoga or Stretching", content: "For this challenge you need to... Do a quick yoga pose or stretching routine, photograph yourself in the pose, and reflect on the sense of well-being it brings.", assignedDate: "27/10/2023"),
     Challenge(name: "Write a Haiku", content: "For this challenge you need to... Write a short haiku poem, take a photo that complements it, and reflect on the emotions it conveys.", assignedDate: "28/10/2023"),
