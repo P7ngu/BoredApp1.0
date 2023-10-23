@@ -16,17 +16,16 @@ class AchievementsViewModel{
     
     var achievements: [Achievement] = [
         Achievement(name: "First goaaaal! 🥅", content: "Complete your first challenge",
-                    completitionMaxPoints: 1.0, completitionPoints: 2.0, imageName: "trofeo"),
+                    completitionMaxPoints: 1.0, completitionPoints: 2.0, imageName: "trofeo2"),
         Achievement(name: "Dante's Paradiso🔥", content: "Complete 3 challenges",
-                    completitionMaxPoints: 3.0, completitionPoints: 2.0, imageName: "trophy2"),
+                    completitionMaxPoints: 3.0, completitionPoints: 2.0, imageName: "trofeo4"),
         Achievement (name: "5some 🏃", content: "Complete 5 challenges",
                      completitionMaxPoints: 5.0, completitionPoints: 2.0, imageName: "trofeo3"),
-        Achievement (name: "CONGRA7S! 🏆", content: "Complete 7 challenges",
-                     completitionMaxPoints: 7.0, completitionPoints: 2.0, imageName: "trofeo4"),
-        Achievement(name: "The best in the game 😇", content: "Complete all the challenges",
-                    completitionMaxPoints: 31.0, completitionPoints: 2.0, imageName: "trofeo5")
+        Achievement (name: "CONGRA7S! 😇", content: "Complete 7 challenges",
+                     completitionMaxPoints: 7.0, completitionPoints: 2.0, imageName: "trofeo5"),
+        Achievement(name: "The best in the game 🏆", content: "Complete all the challenges",
+                    completitionMaxPoints: 31.0, completitionPoints: 2.0, imageName: "trofeo1")
     ]
-    
 
     func getAchievements() -> [Achievement]{
         return self.achievements;
