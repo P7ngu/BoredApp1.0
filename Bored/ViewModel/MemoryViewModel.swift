@@ -21,7 +21,7 @@ class MemoryViewModel {
     }
         
     func checkCompletedChallenges() -> [Challenge] {
-        challenges=getChallenges()
+        challenges = getChallenges()
         for challenge in challenges {
             
             if challenge.completed {

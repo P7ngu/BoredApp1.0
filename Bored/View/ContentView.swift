@@ -34,22 +34,21 @@ struct ContentView: View {
                     VStack {
                         ZStack{
                             VStack{
-                                Text(currentChallenge.name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                Text(currentChallenge.name).bold().font(.title)
                                     .foregroundStyle(.red)
-                                //Text(currentChallenge.assignedDate).font(.title3)
-                                ZStack{
                                     NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
-                                        Image(currentChallenge.imageName)
-                                            .resizable()
-                                            .dynamicTypeSize(.medium)
-                                            .aspectRatio(contentMode: .fit)
-                                            .clipShape(Rectangle())
-                                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                            .opacity(0.5)
-                                            .padding(10)
-                                            .frame(width: 300, height: 300)
-                                        Text("Show Details")
-                                    }
+                                        VStack{
+                                            Image(currentChallenge.imageName)
+                                                .resizable()
+                                                .dynamicTypeSize(.medium)
+                                                .aspectRatio(contentMode: .fit)
+                                                .clipShape(Rectangle())
+                                                .shadow(radius: 10)
+                                                .opacity(0.5)
+                                                .padding(10)
+                                                .frame(width: 300, height: 300)
+                                            Text("Show Details").font(.title2)
+                                        }
                                     
                                     
                                 }

@@ -26,7 +26,14 @@ struct ChallengeDetailedView: View {
             
             
             VStack{
+                Text(challenge.name + ": ")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .bold()
+                
+             
+                
                 ZStack{
+                    
                     Image(challenge.imageName).resizable().aspectRatio(contentMode: .fit)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -34,7 +41,7 @@ struct ChallengeDetailedView: View {
                     if (selectedImage != nil){
                         Image (uiImage: selectedImage)
                             .resizable()
-                            .frame(width: 300, height: 300)
+                            .frame(width: 200, height: 200)
                             .padding()
                     }
                 }
@@ -54,9 +61,7 @@ struct ChallengeDetailedView: View {
                 .pickerStyle(.segmented)
                 
                 
-                Text(challenge.name + ": ")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
+              
                 
                 Text(challenge.content)
                     .font(.callout).padding()
@@ -70,7 +75,13 @@ struct ChallengeDetailedView: View {
                     
                     ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
                     
-                }
+                }.padding(20)
+                
+                Text("Your notes: ")
+                    .font(.title3)
+                TextEditor(text: .constant("This activity helped me connect with my mind!"))
+                    .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                    .foregroundColor(.gray).padding(10)
             }
         }
     }
