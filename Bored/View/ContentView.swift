@@ -35,7 +35,7 @@ struct ContentView: View {
                         ZStack{
                             VStack{
                                 Text(currentChallenge.name).bold().font(.title)
-                                    .foregroundStyle(.red)
+                                    .foregroundStyle(.blue)
                                     NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
                                         VStack{
                                             Image(currentChallenge.imageName)

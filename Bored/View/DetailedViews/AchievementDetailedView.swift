@@ -13,27 +13,24 @@ struct AchievementDetailedView: View {
     var achievement = Achievement(name: "Test achievement", content: "Test content", completed: false, completitionStatus: 0.8, completitionMaxPoints: 23.0)
     
     var body: some View {
+        NavigationView{
         
-        ZStack{ //to change the background color
-            // .blue.ignoresSafeArea().opacity(0.5)
-            
-            
-            VStack{
-                Image(achievement.imageName).resizable().aspectRatio(contentMode: .fit)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    .padding()
+            ZStack{ //to change the background color
+                // .blue.ignoresSafeArea().opacity(0.5)
                 
-                ProgressView(value: achievement.completitionStatus).padding(50)
                 
-                Text(achievement.name + ": ")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
-                
-                Text(achievement.content)
-                    .font(.callout).padding()
+                VStack{
+                    Image(achievement.imageName).resizable().aspectRatio(contentMode: .fit)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        .padding()
+        
+                    Text(achievement.content)
+                        .font(.callout).padding()
+                    ProgressView(value: achievement.completitionStatus).padding(50)
+                }
             }
-        }
+        }.navigationTitle(achievement.name)
     }
 }
 
