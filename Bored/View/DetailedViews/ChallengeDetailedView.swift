@@ -12,9 +12,8 @@ struct ChallengeDetailedView: View {
     
     var challenge = Challenge(name: "Test challenge", content: "Test content", completed: true)
     
-    @State var isPickerShowing = false
-    
     @State var selectedImage: UIImage = UIImage()
+    
     
     
     
@@ -43,11 +42,7 @@ struct ChallengeDetailedView: View {
                             .padding()
                     }
                 }
-               
-                
-                
-              
-                
+                   
                 Text(challenge.content)
                     .font(.callout).padding()
                 

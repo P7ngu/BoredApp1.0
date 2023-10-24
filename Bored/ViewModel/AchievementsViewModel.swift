@@ -24,7 +24,7 @@ class AchievementsViewModel{
         Achievement (name: "CONGRA7S! 😇", content: "Complete 7 challenges",
                      completitionMaxPoints: 7.0, completitionPoints: 2.0, imageName: "trofeo5"),
         Achievement(name: "The best in the game 🏆", content: "Complete all the challenges",
-                    completitionMaxPoints: 31.0, completitionPoints: 2.0, imageName: "trofeo1")
+                    completitionMaxPoints: 31.0, completitionPoints: 2.0, imageName: "trofeo1"),
     ]
 
     func getAchievements() -> [Achievement]{
