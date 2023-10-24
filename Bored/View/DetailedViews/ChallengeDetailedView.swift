@@ -19,14 +19,8 @@ struct ChallengeDetailedView: View {
         NavigationView{
             ZStack{ //to change the background color
                 // .blue.ignoresSafeArea().opacity(0.5)
-                
-                
                 VStack{
-                    //Text(challenge.name + ": ")
-                     //   .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                     //   .bold()
                     ZStack{
-                        
                         Image(challenge.imageName).resizable().aspectRatio(contentMode: .fit)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -41,32 +35,27 @@ struct ChallengeDetailedView: View {
                     
                     Text(challenge.content)
                         .font(.callout).padding()
-                    
-                  
-                    
                     Text("Your notes: ")
                         .font(.title3)
                     TextEditor(text: .constant("This activity helped me connect with my mind!"))
                         .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                         .background(.gray)
                         .foregroundColor(.gray).padding(10)
-                        
-                }.navigationTitle(challenge.name)
-                .toolbar{
-                    Button{
-                        isPickerShowing = true
-                    } label: {
-                        Text("")
-                        Image(systemName: "photo.badge.plus")
-                    }
-                    .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-                        
-                        ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-                        
-                    }.padding(20)
+                    
                 }
             }
-        }
+        }.navigationTitle(challenge.name)
+            .toolbar{
+                Button{
+                    isPickerShowing = true
+                } label: {
+                    Text("")
+                    Image(systemName: "photo.badge.plus")
+                }
+                .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
+                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                }.padding(20)
+            }
     }
 }
 
