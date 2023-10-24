@@ -12,6 +12,8 @@ struct ChallengeDetailedView: View {
     
     var challenge = Challenge(name: "Test challenge", content: "Test content", completed: true)
     
+    @State var isPickerShowing = false
+    
     @State var selectedImage: UIImage = UIImage()
     
     @State var selection: String = "Unaccepted"
@@ -43,7 +45,20 @@ struct ChallengeDetailedView: View {
                             .padding()
                     }
                 }
-
+                Picker(
+                    selection: $selection,
+                    label:
+                        HStack {
+                            Text("Challange:")
+                            Text(selection)
+                        }
+                    ,
+                    content: {
+                        ForEach(filterOptions, id: \.self) { option in
+                            Text(option)
+                            .tag(option)}
+                    })
+                .pickerStyle(.segmented)
                 
                 
               
