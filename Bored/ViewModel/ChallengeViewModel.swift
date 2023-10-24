@@ -11,6 +11,12 @@ import SwiftUI
 class ChallengeViewModel{
     var todaysChallenge = Challenge(name: "error", content: "error")
     
+   // func markTodaysChallengeAsCompleted(){
+     //   var tempChallenge = getTodaysChallenge()
+       // tempChallenge.completed = true
+        //todaysChallenge.completed = true
+    //}
+    
     func getTodaysChallenge() -> Challenge{
         var currentDate = Time().getCurrentDate()
         

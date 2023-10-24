@@ -10,12 +10,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var showSettings: Bool = false
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
     var currentChallenge = ChallengeViewModel().getTodaysChallenge()
     //var currentDate = Time().getCurrentDate()
     
-   
+    
     
     @State var isPickerShowing = false
     
@@ -32,60 +34,25 @@ struct ContentView: View {
                     VStack {
                         ZStack{
                             VStack{
-                                Text(currentChallenge.name).bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                Text(currentChallenge.name).bold().font(.title)
                                     .foregroundStyle(.red)
-                                //Text(currentChallenge.assignedDate).font(.title3)
-                                
-                                ZStack{
-                                    Image(currentChallenge.imageName)
-                                        .resizable()
-                                        .dynamicTypeSize(.medium)
-                                        .aspectRatio(contentMode: .fit)
-                                        .clipShape(Rectangle())
-                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                        .opacity(0.5)
-                                        .padding(10)
-                                        .frame(width: 300, height: 300)
-                                    
-                                    if (selectedImage != nil){
-                                        Image (uiImage: selectedImage)
-                                            .resizable()
-                                            .frame(width: 300, height: 300)
-                                            .padding()
-                                    }
-                                   
-                                }
-                                
-                                
-                                Text(currentChallenge.content).padding()
-                                
-                                
-                                
-                                Picker(
-                                    selection: $selection,
-                                    label:
-                                        HStack {
-                                            Text("Challange:")
-                                            Text(selection)
+                                    NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
+                                        VStack{
+                                            Image(currentChallenge.imageName)
+                                                .resizable()
+                                                .dynamicTypeSize(.medium)
+                                                .aspectRatio(contentMode: .fit)
+                                                .clipShape(Rectangle())
+                                                .shadow(radius: 10)
+                                                .opacity(0.5)
+                                                .padding(10)
+                                                .frame(width: 300, height: 300)
+                                            Text("Show Details").font(.title2)
                                         }
-                                    ,
-                                    content: {
-                                        ForEach(filterOptions, id: \.self) { option in
-                                            Text(option)
-                                            .tag(option)}
-                                    })
-                                .pickerStyle(.segmented)
+                                    
+                                    
+                                }
                                 
-                                Button{
-                                    isPickerShowing = true
-                                } label: {
-                                    Text("Select a Photo")
-                                }
-                                .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-                                    
-                                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-                                    
-                                }
                                 
                             }
                             
@@ -115,3 +82,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+

@@ -49,6 +49,36 @@
                   endingLineNumber = "25"
                   offsetFromSymbolStart = "244">
                </Location>
+               <Location
+                  uuid = "6EC29EB5-C341-46B6-8B0A-0808FB52088F - 6325db8a310075e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bored.MemoryViewModel.checkCompletedChallenges() -&gt; Swift.Array&lt;Bored.Challenge&gt;"
+                  moduleName = "Bored"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matteoperotta/Documents/Dev/Bored/Bored/ViewModel/MemoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "6EC29EB5-C341-46B6-8B0A-0808FB52088F - 6325db8a310075e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bored.MemoryViewModel.checkCompletedChallenges() -&gt; Swift.Array&lt;Bored.Challenge&gt;"
+                  moduleName = "Bored"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matteoperotta/Documents/Dev/Bored/Bored/ViewModel/MemoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "184">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -98,6 +128,70 @@
                   offsetFromSymbolStart = "168">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D67C18AE-799F-4721-908A-8D8F1210FEB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bored/ViewModel/MemoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "checkCompletedChallenges()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D67C18AE-799F-4721-908A-8D8F1210FEB3 - 6325db8a310075e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bored.MemoryViewModel.checkCompletedChallenges() -&gt; Swift.Array&lt;Bored.Challenge&gt;"
+                  moduleName = "Bored"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matteoperotta/Documents/Dev/Bored/Bored/ViewModel/MemoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "D67C18AE-799F-4721-908A-8D8F1210FEB3 - 6325db8a310075e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bored.MemoryViewModel.checkCompletedChallenges() -&gt; Swift.Array&lt;Bored.Challenge&gt;"
+                  moduleName = "Bored"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matteoperotta/Documents/Dev/Bored/Bored/ViewModel/MemoryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2946E745-33E1-4456-89E2-67BCAB5BD848"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bored/ViewModel/MemoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getChallenges()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

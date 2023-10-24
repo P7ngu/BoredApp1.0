@@ -17,7 +17,8 @@ struct ImagePicker: UIViewControllerRepresentable{
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let imagePicker = UIImagePickerController();
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
+        //imagePicker.sourceType = .photoLibrary
         imagePicker.delegate =  context.coordinator //object that can receive UIImagePickerControllerEvents
         
         return imagePicker
@@ -51,6 +52,7 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //When the user selected a media
         print ("image selected")
+            
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
            
@@ -58,6 +60,7 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
             DispatchQueue.main.async {
                 // We succeded retrieving th eimage
                 self.parent.selectedImage = image
+               // ChallengeViewModel().markTodaysChallengeAsCompleted()
                // ChallengeViewModel().updateChallenge
                 
             }

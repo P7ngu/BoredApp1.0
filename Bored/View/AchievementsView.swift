@@ -22,16 +22,18 @@ struct AchievementsView: View {
                         AchievementDetailedView(achievement: achievement)
                         
                     } label: {
-                        HStack {
-                            //opposite to VStack, there is also ZStack
-                            Image(systemName: "flag.checkered.2.crossed")
-                                .imageScale(.large)
-                                .foregroundStyle(.blue);
-                            Text (achievement.name).bold()
-                                .scaledToFill()
-                            
-                        }.padding()
-                        ProgressView(value: achievement.completitionStatus)
+                        VStack{
+                            HStack {
+                                //opposite to VStack, there is also ZStack
+                                Image(systemName: "flag.checkered.2.crossed")
+                                    .imageScale(.large)
+                                    .foregroundStyle(.blue);
+                                Text (achievement.name).bold()
+                                    .scaledToFill()
+                                
+                            }.padding()
+                            ProgressView(value: achievement.completitionStatus).padding()
+                        }
                     }
                     //.padding()
                 }
