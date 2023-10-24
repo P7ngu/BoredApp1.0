@@ -12,10 +12,8 @@ struct ChallengeDetailedView: View {
     
     var challenge = Challenge(name: "Test challenge", content: "Test content", completed: true)
     
+    @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
-    
-    
-    
     
     var body: some View {
         ZStack{ //to change the background color
@@ -26,9 +24,6 @@ struct ChallengeDetailedView: View {
                 Text(challenge.name + ": ")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
-                
-             
-                
                 ZStack{
                     
                     Image(challenge.imageName).resizable().aspectRatio(contentMode: .fit)
@@ -42,7 +37,7 @@ struct ChallengeDetailedView: View {
                             .padding()
                     }
                 }
-                   
+
                 Text(challenge.content)
                     .font(.callout).padding()
                 
