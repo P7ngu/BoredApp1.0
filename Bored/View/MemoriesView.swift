@@ -29,6 +29,8 @@ struct MemoriesView: View {
                             Text (memory.name).bold()
                            
                         }.padding()
+                          
+                            
                     }
                     //.padding()
                 }

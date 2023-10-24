@@ -33,6 +33,7 @@ struct ContentView: View {
                 ScrollView{
                     VStack {
                         ZStack{
+                           // currentChallenge.color.ignoresSafeArea().opacity(0.2)
                             VStack{
                                 Text(currentChallenge.name).bold().font(.title)
                                     .foregroundStyle(.blue)
@@ -67,9 +68,10 @@ struct ContentView: View {
                     .padding()
                 }
                 .navigationTitle("Today")
-                
+                .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
 
             }
+            
             .tabItem {
                 Label("Today", systemImage: "cloud.sun")
             }

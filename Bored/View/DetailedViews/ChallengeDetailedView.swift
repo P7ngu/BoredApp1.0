@@ -35,12 +35,16 @@ struct ChallengeDetailedView: View {
                     
                     Text(challenge.content)
                         .font(.callout).padding()
-                    Text("Your notes: ")
-                        .font(.title3)
-                    TextEditor(text: .constant("This activity helped me connect with my mind!"))
-                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                        .background(.gray)
-                        .foregroundColor(.gray).padding(10)
+                    GroupBox(label:
+                                Label("Your notes:", systemImage: "pencil.line")
+                    ){
+                        
+                        TextEditor(text: .constant("This activity helped me connect with my mind!"))
+                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                            .foregroundStyle(.gray)
+                            .foregroundColor(Color.gray)
+                    }
+                    
                     
                 }
             }

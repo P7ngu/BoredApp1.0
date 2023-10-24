@@ -25,6 +25,20 @@ struct MemoryDetailedView: View {
                         .padding()
                     Text(memory.content)
                         .font(.callout).padding()
+                    
+                    ZStack{
+                        //RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/).size(width: 1000, height: 300)
+                        GroupBox(label: 
+                                    Label("Your notes:", systemImage: "pencil.line")
+                                 ){
+                            
+                            TextEditor(text: .constant("This activity helped me connect with my mind!"))
+                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                .foregroundStyle(.gray)
+                                .foregroundColor(Color.gray)
+                        }
+                            
+                    }
                 }
             }
         }.navigationTitle(memory.name)
