@@ -61,7 +61,7 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-                .navigationTitle("Today's Challenge is:")
+                .navigationTitle("Today:")
             }
             .tabItem {
                 Label("Today", systemImage: "cloud.sun")
