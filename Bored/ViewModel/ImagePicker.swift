@@ -18,7 +18,7 @@ struct ImagePicker: UIViewControllerRepresentable{
     func makeUIViewController(context: Context) -> some UIViewController {
         let imagePicker = UIImagePickerController();
         imagePicker.sourceType = .camera
-        //imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate =  context.coordinator //object that can receive UIImagePickerControllerEvents
         
         return imagePicker

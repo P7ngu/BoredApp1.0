@@ -47,7 +47,12 @@ struct ContentView: View {
                                                 .opacity(0.5)
                                                 .padding(10)
                                                 .frame(width: 300, height: 300)
-                                            Text("Show Details").font(.title2)
+                                            Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
+                                            HStack{
+                                        
+                                                Text("show details").font(.title2)
+                                                Image(systemName: "info.bubble")
+                                            }
                                         }
                                     
                                     
@@ -61,7 +66,7 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-                .navigationTitle("Today's Challenge is:")
+                .navigationTitle("Today")
             }
             .tabItem {
                 Label("Today", systemImage: "cloud.sun")
