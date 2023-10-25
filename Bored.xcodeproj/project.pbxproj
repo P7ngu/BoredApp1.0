@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6308E4942AE2787B00CB6C2A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308E4932AE2787B00CB6C2A /* ImagePicker.swift */; };
+		634F55F22AE959AB005ADAAB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 634F55F02AE959AB005ADAAB /* Model.xcdatamodeld */; };
 		6362EB5F2AE28B66004703BB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6362EB5E2AE28B66004703BB /* Time.swift */; };
 		6365D2EF2AE118A10019170B /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2EE2AE118A10019170B /* ChallengeViewModel.swift */; };
 		6365D2F12AE11E690019170B /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F02AE11E690019170B /* MemoriesView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6308E4932AE2787B00CB6C2A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		634F55F12AE959AB005ADAAB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6362EB5E2AE28B66004703BB /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		6365D2EE2AE118A10019170B /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
 		6365D2F02AE11E690019170B /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				63D5219C2ADFE53A00EAE4BC /* ChallengeModel.swift */,
+				634F55F02AE959AB005ADAAB /* Model.xcdatamodeld */,
 				6365D2FC2AE124940019170B /* AchievementModel.swift */,
 			);
 			path = Model;
@@ -207,6 +210,7 @@
 			files = (
 				6308E4942AE2787B00CB6C2A /* ImagePicker.swift in Sources */,
 				6365D2FD2AE124940019170B /* AchievementModel.swift in Sources */,
+				634F55F22AE959AB005ADAAB /* Model.xcdatamodeld in Sources */,
 				6362EB5F2AE28B66004703BB /* Time.swift in Sources */,
 				6365D2F52AE120310019170B /* MemoryViewModel.swift in Sources */,
 				6365D2F12AE11E690019170B /* MemoriesView.swift in Sources */,
@@ -426,6 +430,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		634F55F02AE959AB005ADAAB /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				634F55F12AE959AB005ADAAB /* Model.xcdatamodel */,
+			);
+			currentVersion = 634F55F12AE959AB005ADAAB /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6388B6F72ADE940300CCA6B6 /* Project object */;
 }

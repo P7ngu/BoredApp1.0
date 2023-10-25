@@ -21,16 +21,18 @@ struct MemoriesView: View {
                         MemoryDetailedView(memory: memory)
                         
                     } label: {
-                        HStack {
-                            //opposite to VStack, there is also ZStack
-                            Image(systemName: "checkmark.seal.fill")
-                                .imageScale(.large)
-                                .foregroundStyle(.blue);
-                            Text (memory.name).bold()
-                           
-                        }.padding()
-                          
+                        VStack{
                             
+                            HStack {
+                                //opposite to VStack, there is also ZStack
+                                Image(systemName: "checkmark.seal.fill")
+                                    .imageScale(.large)
+                                    .foregroundStyle(.blue);
+                                Text (memory.name).bold()
+                                
+                            }.padding()
+                            
+                        }//Vstack end
                     }
                     //.padding()
                 }

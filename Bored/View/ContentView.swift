@@ -15,10 +15,6 @@ struct ContentView: View {
     var viewmodel = ChallengeViewModel();
     var daycounter = 0;
     var currentChallenge = ChallengeViewModel().getTodaysChallenge()
-    //var currentDate = Time().getCurrentDate()
-    
-    
-    
     @State var isPickerShowing = false
     
     @State var selectedImage: UIImage = UIImage()
@@ -39,7 +35,7 @@ struct ContentView: View {
                                     .foregroundStyle(.blue)
                                     NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
                                         VStack{
-                                            Image(currentChallenge.imageName)
+                                           Image(currentChallenge.imageName)
                                                 .resizable()
                                                 .dynamicTypeSize(.medium)
                                                 .aspectRatio(contentMode: .fit)

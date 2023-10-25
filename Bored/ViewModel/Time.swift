@@ -18,7 +18,7 @@ class Time{
         //formatter.dateStyle = .short;
         
         let dateTimeString = formatter.string(from: currentDateTime)
-        print(dateTimeString)
+        //print(dateTimeString)
         return dateTimeString
         
     }
