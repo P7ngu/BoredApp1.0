@@ -10,7 +10,6 @@ import Foundation
 class MemoryViewModel {
     
     var challenges: [Challenge] = []
-    
     var completedChallenges: [Challenge] = []
     
     func getChallenges()-> [Challenge]{
@@ -19,17 +18,16 @@ class MemoryViewModel {
         return challenges
         
     }
-        
+    
     func checkCompletedChallenges() -> [Challenge] {
         challenges = getChallenges()
+        print("Checking completed challenges..")
         for challenge in challenges {
-            
             if challenge.completed {
                 completedChallenges.append(challenge)
+                print("Found a completed challenge...")
             } else {
-                
-            }
-            
+            } 
         }
         
         return completedChallenges

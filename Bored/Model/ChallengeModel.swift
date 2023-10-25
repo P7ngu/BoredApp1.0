@@ -32,5 +32,9 @@ class Challenge: Identifiable{
         self.assignedDate = assignedDate
         self.image = image
     }
+    
+    func markChallengeAsCompleted(challengeToMark: Challenge) ->Void{
+        challengeToMark.completed = true;
+    }
 }
     

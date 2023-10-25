@@ -9,29 +9,30 @@ import Foundation
 import SwiftUI
 
 class ChallengeViewModel{
-    var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
+   // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
-   // func markTodaysChallengeAsCompleted(){
-     //   var tempChallenge = getTodaysChallenge()
-       // tempChallenge.completed = true
-        //todaysChallenge.completed = true
-    //}
+    func markTodaysChallengeAsCompleted() -> Void{
+        var tempChallenge = getTodaysChallenge()
+        tempChallenge.completed = true
+        print("set daily challenge as completed")
+        MemoryViewModel().checkCompletedChallenges()
+        
+    }
     
     func getTodaysChallenge() -> Challenge{
         var currentDate = Time().getCurrentDate()
-        
         for challenge in challenges {
             //print("for iteration")
             if (challenge.assignedDate == currentDate)
             {
-                print("date match found")
-                todaysChallenge = challenge
-                return todaysChallenge
-            }else{}
+                print("date match found, fetched today's challenge")
+                return challenge
+            }else{
                 
+            }
         }
         
-        return todaysChallenge
+        return challenges.last!
         
     }
     

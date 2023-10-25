@@ -60,6 +60,7 @@ struct ChallengeDetailedView: View {
                     ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
                 }.padding(20)
             }
+           
     }
 }
 
