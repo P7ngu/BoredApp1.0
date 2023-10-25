@@ -10,7 +10,7 @@ import SwiftUI
 struct MemoryDetailedView: View {
     var viewmodel = MemoryViewModel();
     
-    var memory = Challenge(name: "Test challenge", content: "Test content", completed: true)
+    var memory = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
     var body: some View {
         NavigationView{

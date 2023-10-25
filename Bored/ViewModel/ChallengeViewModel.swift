@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class ChallengeViewModel{
-    var todaysChallenge = Challenge(name: "error", content: "error")
+    var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
    // func markTodaysChallengeAsCompleted(){
      //   var tempChallenge = getTodaysChallenge()

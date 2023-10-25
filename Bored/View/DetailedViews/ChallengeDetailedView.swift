@@ -10,7 +10,7 @@ import SwiftUI
 struct ChallengeDetailedView: View {
     var viewmodel = ChallengeViewModel();
     
-    var challenge = Challenge(name: "Test challenge", content: "Test content", completed: true)
+    var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
