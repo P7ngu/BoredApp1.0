@@ -352,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bored/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Y7P52GGAD;
+				DEVELOPMENT_TEAM = AWX4HJ7JT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
@@ -382,7 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bored/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Y7P52GGAD;
+				DEVELOPMENT_TEAM = AWX4HJ7JT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
