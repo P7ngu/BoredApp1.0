@@ -46,27 +46,35 @@ struct ChallengeDetailedView: View {
                     
                     Text(challenge.content)
                         .font(.callout).padding()
-                    
-                    GroupBox(label:
-                                Label("Your notes:", systemImage: "pencil.line")
-                    ){
-                        
-                        TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
-                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                            .foregroundStyle(.gray)
-                            .foregroundColor(Color.gray)
-                        Button("Save notes") {
-                            let notes = userNotes
-                            MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
-                            showingConfirmation = true
+                    if(challenge.completed == false){
+                        GroupBox(label:
+                                    Label("Your notes:", systemImage: "pencil.line")
+                        ){
                             
-                        }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                            Button("OK", role: .cancel) {
-                                showingConfirmation = false
+                            TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
+                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                .foregroundStyle(.gray)
+                                .foregroundColor(Color.gray)
+                            Button("Save notes") {
+                                let notes = userNotes
+                                MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
+                                showingConfirmation = true
+                                
+                            }.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                Button("OK", role: .cancel) {
+                                    showingConfirmation = false
+                                }
                             }
+                            
                         }
-                        
-                    }
+                    }else { // the challenge has already been completed, you can't edit the text anymore.
+                            
+                            Text("You have already completed this challenge, congratulations!")
+                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                .foregroundStyle(.purple)
+                                .foregroundColor(Color.gray)
+                        }
+                    
                     
                 
                 

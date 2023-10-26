@@ -12,12 +12,13 @@ import SwiftData
 class ChallengeViewModel{
    // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
-    func markTodaysChallengeAsCompleted(notes: String, context: ModelContext) -> Void{
+    func markTodaysChallengeAsCompleted(notes: String) -> Void{
+        @Environment(\.modelContext) var modelContext
         var tempChallenge = getTodaysChallenge()
         tempChallenge.completed = true
         print("set daily challenge as completed")
-        MemoryViewModel().checkCompletedChallenges()
-        MemoryViewModel().convertChallengeIntoMemory(challenge: tempChallenge, context: context, notes: notes)
+        MemoryViewModel().checkCompletedChallenges(context: modelContext)
+        MemoryViewModel().convertChallengeIntoMemory(challenge: tempChallenge, context: modelContext, notes: notes)
         
     }
     
