@@ -22,17 +22,25 @@ struct AchievementsView: View {
                         AchievementDetailedView(achievement: achievement)
                         
                     } label: {
-                        VStack{
-                            HStack {
-                                //opposite to VStack, there is also ZStack
-                                Image(systemName: "flag.checkered.2.crossed")
-                                    .imageScale(.large)
-                                    .foregroundStyle(.blue);
-                                Text (achievement.name).bold()
-                                    .scaledToFill()
-                                
-                            }.padding()
-                            ProgressView(value: achievement.completitionStatus).padding()
+                        HStack{
+                            
+                            Image(achievement.imageName)
+                                .resizable()
+                                .frame(width: 50, height: 60)
+                                .imageScale(.small)
+                                .foregroundStyle(.blue)
+                                .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+                            
+                            VStack{
+                                HStack {
+                                    //opposite to VStack, there is also ZStack
+                                    
+                                    Text (achievement.name).bold()
+                                        .scaledToFill()
+                                    
+                                }//.padding()
+                                ProgressView(value: achievement.completitionStatus).padding()
+                            }
                         }
                     }
                     //.padding()

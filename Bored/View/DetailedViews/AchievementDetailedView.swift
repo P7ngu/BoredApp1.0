@@ -17,6 +17,7 @@ struct AchievementDetailedView: View {
         
             ZStack{ //to change the background color
                 // .blue.ignoresSafeArea().opacity(0.5)
+                Color.yellow.ignoresSafeArea().opacity(0.5)
                 
                 
                 VStack{

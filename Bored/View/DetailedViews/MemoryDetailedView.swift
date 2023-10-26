@@ -16,6 +16,7 @@ struct MemoryDetailedView: View {
         NavigationView{
             ZStack{ //to change the background color
                 // .blue.ignoresSafeArea().opacity(0.5)
+                //Color.pink.ignoresSafeArea().opacity(0.5)
                 
                 
                 VStack{

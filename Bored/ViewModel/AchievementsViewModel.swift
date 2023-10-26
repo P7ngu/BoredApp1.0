@@ -15,14 +15,19 @@ class AchievementsViewModel{
     var numberOfCompletedChallenges: Int = 0
     
     var achievements: [Achievement] = [
+       
         Achievement(name: "First goaaaal! 🥅", content: "Complete your first challenge",
                     completitionMaxPoints: 1.0, completitionPoints: 2.0, imageName: "trofeo2"),
-        Achievement(name: "Dante's Paradiso🔥", content: "Complete 3 challenges",
+        Achievement(name: "Dante's Paradiso 🔥", content: "Complete 3 challenges",
                     completitionMaxPoints: 3.0, completitionPoints: 2.0, imageName: "trofeo4"),
-        Achievement (name: "5some 🏃", content: "Complete 5 challenges",
-                     completitionMaxPoints: 5.0, completitionPoints: 2.0, imageName: "trofeo3"),
-        Achievement (name: "CONGRA7S! 😇", content: "Complete 7 challenges",
-                     completitionMaxPoints: 7.0, completitionPoints: 2.0, imageName: "trofeo5"),
+        Achievement (name: "First week run 🏃", content: "Complete 7 challenges",
+                     completitionMaxPoints: 7.0, completitionPoints: 2.0, imageName: "trofeo3"),
+        Achievement(name: "Birdwatcher 🍃", content: "Complete all the nature-related challenges",
+                    completitionMaxPoints: 10.0, completitionPoints: 2.0, imageName: "trofeo6"),
+        Achievement (name: "Half of the road 😇", content: "Complete 15 challenges",
+                     completitionMaxPoints: 15.0, completitionPoints: 2.0, imageName: "trofeo5"),
+        Achievement (name: "DaVinci award 🎨", content: "Complete all art-related challenges",
+                     completitionMaxPoints: 20.0, completitionPoints: 2.0, imageName: "trofeo7"),
         Achievement(name: "The best in the game 🏆", content: "Complete all the challenges",
                     completitionMaxPoints: 31.0, completitionPoints: 2.0, imageName: "trofeo1"),
     ]

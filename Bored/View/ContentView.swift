@@ -28,11 +28,13 @@ struct ContentView: View {
     
     
     var body: some View {
+        
         TabView{
             NavigationStack{
                 ScrollView{
                     VStack {
                         ZStack{
+                          
                            // currentChallenge.color.ignoresSafeArea().opacity(0.2)
                             VStack{
                                 Text(currentChallenge.name).bold().font(.title)

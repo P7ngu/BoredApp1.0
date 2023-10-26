@@ -12,29 +12,31 @@ struct MemoriesView: View {
     var completedChallenges = MemoryViewModel().checkCompletedChallenges()
     
     var body: some View {
-        
-        NavigationStack{
-            List {
-                ForEach(completedChallenges){ memory in
-                    
-                    NavigationLink{
-                        MemoryDetailedView(memory: memory)
+        ZStack{
+            Color.pink.ignoresSafeArea().opacity(0.5)
+            NavigationStack{
+                List {
+                    ForEach(completedChallenges){ memory in
                         
-                    } label: {
-                        HStack {
-                            //opposite to VStack, there is also ZStack
-                            Image(systemName: "checkmark.seal.fill")
-                                .imageScale(.large)
-                                .foregroundStyle(.blue);
-                            Text (memory.name).bold()
-                           
-                        }.padding()
-                          
+                        NavigationLink{
+                            MemoryDetailedView(memory: memory)
                             
+                        } label: {
+                            HStack {
+                                //opposite to VStack, there is also ZStack
+                                Image(systemName: "checkmark.seal.fill")
+                                    .imageScale(.large)
+                                    .foregroundStyle(.blue);
+                                Text (memory.name).bold()
+                                
+                            }.padding()
+                            
+                            
+                        }
+                        //.padding()
                     }
-                    //.padding()
-                }
-            }.navigationTitle("Memories")
+                }.navigationTitle("Memories")
+            }
         }
     }
 }
