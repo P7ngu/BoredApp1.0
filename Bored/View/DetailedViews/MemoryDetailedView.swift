@@ -36,7 +36,7 @@ struct MemoryDetailedView: View {
                                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                 .foregroundStyle(.gray)
                                 .foregroundColor(Color.gray)
-                            Button("Save notes") {
+                            Button("Update notes") {
                                 let notes = memory.notes
                                // MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: memory.notes)
                                 showingConfirmation = true
