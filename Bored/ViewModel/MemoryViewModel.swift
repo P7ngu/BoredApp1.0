@@ -6,11 +6,20 @@
 //
 
 import Foundation
+import SwiftData
 
 class MemoryViewModel {
     
     var challenges: [Challenge] = []
     var completedChallenges: [Challenge] = []
+    
+    func convertChallengeIntoMemory (challenge: Challenge, context: ModelContext, notes: String) -> Memory {
+        
+        var newCreatedMemory: Memory = Memory(name: challenge.name, content: challenge.content, notes: notes , imageName: challenge.imageName)
+        context.insert(newCreatedMemory)
+        
+        return newCreatedMemory
+    }
     
     func getChallenges()-> [Challenge]{
         var challviewmodel = ChallengeViewModel()

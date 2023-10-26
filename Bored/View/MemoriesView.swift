@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct MemoriesView: View {
     var viewmodel = MemoryViewModel()
     var completedChallenges = MemoryViewModel().checkCompletedChallenges()
+    
+    @Query var memories: [Memory]
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         ZStack{
             Color.pink.ignoresSafeArea().opacity(0.5)
             NavigationStack{
                 List {
-                    ForEach(completedChallenges){ memory in
+                    ForEach(memories){ memory in
                         
                         NavigationLink{
                             MemoryDetailedView(memory: memory)

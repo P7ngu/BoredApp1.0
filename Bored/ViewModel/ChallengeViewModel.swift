@@ -7,20 +7,22 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 class ChallengeViewModel{
    // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
-    func markTodaysChallengeAsCompleted() -> Void{
+    func markTodaysChallengeAsCompleted(notes: String, context: ModelContext) -> Void{
         var tempChallenge = getTodaysChallenge()
         tempChallenge.completed = true
         print("set daily challenge as completed")
         MemoryViewModel().checkCompletedChallenges()
+        MemoryViewModel().convertChallengeIntoMemory(challenge: tempChallenge, context: context, notes: notes)
         
     }
     
     func getTodaysChallenge() -> Challenge{
-        var currentDate = Time().getCurrentDate()
+        let currentDate = Time().getCurrentDate()
         for challenge in challenges {
             //print("for iteration")
             if (challenge.assignedDate == currentDate)
@@ -37,9 +39,9 @@ class ChallengeViewModel{
     }
     
     var challenges = [
-        Challenge(id: UUID(), name: "Nature Walking 🍃", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", color: .blue, completed: true, imageName: "noimage", assignedDate: "01", image: nil ),
-        Challenge(id: UUID(), name: "Morning Coffee ☕️", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", color: .blue, completed: true, imageName: "noimage", assignedDate: "02", image: nil ),
-        Challenge(id: UUID(), name: "Doodle or Sketch ✍🏻", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process",  color: .blue, completed: true, imageName: "noimage", assignedDate: "03"),
+        Challenge(id: UUID(), name: "Nature Walking 🍃", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", color: .blue, completed: true, imageName: "naturewalk", assignedDate: "01", image: nil ),
+        Challenge(id: UUID(), name: "Morning Coffee ☕️", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", color: .blue, completed: true, imageName: "coffee", assignedDate: "02", image: nil ),
+        Challenge(id: UUID(), name: "Doodle or Sketch ✍🏻", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process",  color: .blue, completed: true, imageName: "doodle", assignedDate: "03"),
         Challenge(id: UUID(), name: "Healthy Snack 🍿", content: "For this challenge you need to... Prepare a quick, healthy snack, photograph it, and reflect on the importance of nourishing your body.",color: .blue, completed: false, imageName: "noimage", assignedDate: "04"),
         Challenge(id: UUID(), name: "Sunset/Sunrise 🌅", content: "For this challenge you need to... Take a photo of the sunset or sunrise and reflect on the beauty of the natural world.",  color: .blue, completed: false, imageName: "noimage", assignedDate: "05"),
         Challenge(id: UUID(), name: "Favourite Book Page 📖", content: "For this challenge you need to... Open your favourite book to a random page, read a passage, take a photo, and reflect on the words' meaning in your life.", color: .blue, completed: false, imageName: "noimage", assignedDate: "06"),
