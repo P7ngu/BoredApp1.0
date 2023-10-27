@@ -20,8 +20,6 @@ struct BoredApp: App {
         let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
             return try ModelContainer(for: schema, configurations: [configuration])
-            
-            
         } catch {
             fatalError("Failed to configure SwiftData container.")
         }
@@ -30,6 +28,7 @@ struct BoredApp: App {
     
     var body: some Scene {
         WindowGroup {
+            
             ContentView(modelContext: sharedModelContainer.mainContext)
         }
         .modelContainer(sharedModelContainer)

@@ -25,6 +25,7 @@ struct ChallengeDetailedView: View {
     
     @State var userNotes: String = ""
     @Query var memories: [Memory]
+    @Query var challenges: [Challenge]
     @Environment(\.modelContext) var modelContext
     
     var body: some View {
@@ -52,36 +53,42 @@ struct ChallengeDetailedView: View {
                         .font(.callout).padding()
                     
                     ZStack{
-                        if(challenge.completed == false){
-                            GroupBox(label:
-                                        Label("Your notes:", systemImage: "pencil.line")
-                            ){
-                                
-                                TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
-                                    .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                    .foregroundStyle(.gray)
-                                    .foregroundColor(Color.gray)
-                                Button("Save notes") {
-                                    let notes = userNotes
-                                    
-                                    MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
-                                    showingConfirmation = true
-                                    challenge.completed = true
-                                    
-                                }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                                    Button("OK", role: .cancel) {
-                                        showingConfirmation = false
+                        ForEach (challenges) { chall in
+                            if (chall.name == challenge.name){
+                                if(chall.completed == false){
+                                    GroupBox(label:
+                                                Label("Your notes:", systemImage: "pencil.line")
+                                    ){
+                                        
+                                        TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
+                                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                            .foregroundStyle(.gray)
+                                            .foregroundColor(Color.gray)
+                                        Button("Save notes") {
+                                            let notes = userNotes
+                                            
+                                            MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
+                                            showingConfirmation = true
+                                            chall.completed = true
+                                            challenge.completed = true
+                                            
+                                        }.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                            Button("OK", role: .cancel) {
+                                                showingConfirmation = false
+                                            }
+                                        }
+                                        
                                     }
+                                }else { // the challenge has already been completed, you can't edit the text anymore.
+                                    
+                                    Text("You have already completed this challenge, congratulations!")
+                                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                        .foregroundStyle(.purple)
+                                    //.foregroundColor(Color.gray)
                                 }
-                                
                             }
-                        }else { // the challenge has already been completed, you can't edit the text anymore.
-                            
-                            Text("You have already completed this challenge, congratulations!")
-                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                .foregroundStyle(.purple)
-                            //.foregroundColor(Color.gray)
                         }
+                       
                     }
                 }
             }

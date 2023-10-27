@@ -29,9 +29,6 @@ struct ContentView: View {
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
     
- 
-    
-    
     var body: some View {
         TabView{
             NavigationStack{
@@ -64,7 +61,7 @@ struct ContentView: View {
                                 
                                 VStack{
                                     GroupBox{
-                                        Text("Future challenges").font(.title)
+                                        Text("SPOILER ALERT: take a look at our future challenges").font(.title3)
                                         
                                         ForEach (challengess) {challenge in
                                             HStack{

@@ -18,10 +18,8 @@ class ChallengeViewModel {
         self.modelContext = modelContext
     }
     
-    func fillDatabaseWithChallenges() {
-        for(challenge) in challenges {
-            modelContext.insert(challenge)
-        }
+    func getChallengeList () -> [Challenge]{
+        return challenges
     }
     
     func markTodaysChallengeAsCompleted(notes: String, challviewmodel: ChallengeViewModel) -> Void{
@@ -36,7 +34,7 @@ class ChallengeViewModel {
     
     func getTodaysChallenge() -> Challenge{
         //TODO: put an if
-        fillDatabaseWithChallenges()
+        //fillDatabaseWithChallenges()
         let currentDate = Time().getCurrentDate()
         for challenge in challenges {
             //print("for iteration")
