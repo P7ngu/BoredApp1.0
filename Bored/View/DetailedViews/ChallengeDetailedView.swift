@@ -30,7 +30,7 @@ struct ChallengeDetailedView: View {
     var body: some View {
         NavigationView{
             ZStack{ //to change the background color
-                Color.yellow.ignoresSafeArea().opacity(0.5)
+               // Color.yellow.ignoresSafeArea().opacity(0.5)
                 VStack{
                     ZStack{
                         Image(challenge.imageName)

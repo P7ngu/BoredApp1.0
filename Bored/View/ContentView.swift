@@ -52,25 +52,27 @@ struct ContentView: View {
                               //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                             VStack(alignment: .leading){
                                 NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
-                                    VStack{
-                                        Text(currentChallenge.name).bold().font(.title)
-                                            .foregroundStyle(Color.orange)
-                                        Image(currentChallenge.imageName)
-                                            .resizable()
-                                            .dynamicTypeSize(.medium)
-                                            .aspectRatio(contentMode: .fit)
-                                            .clipShape(Rectangle())
-                                            .shadow(radius: 10)
-                                            .opacity(0.5)
-                                            .padding(10)
-                                            .frame(width: 300, height: 300)
-                                        Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
-                                        HStack{
-                                            Text("show details").font(.title2)
-                                            Image(systemName: "info.bubble")
+                                    GroupBox{
+                                        VStack{
+                                            Text(currentChallenge.name).bold().font(.title)
+                                                .foregroundStyle(Color.orange)
+                                            Image(currentChallenge.imageName)
+                                                .resizable()
+                                                .dynamicTypeSize(.medium)
+                                                .aspectRatio(contentMode: .fit)
+                                                .clipShape(Rectangle())
+                                                .shadow(radius: 10)
+                                                .opacity(0.5)
+                                                .padding(10)
+                                                .frame(width: 300, height: 300)
+                                            Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
+                                            HStack{
+                                                Text("show details").font(.title2)
+                                                Image(systemName: "info.bubble")
+                                            }
                                         }
-                                    }
-                                    
+                                        
+                                    }.foregroundStyle(Color.blue)
                                 }
                                 
                             }
@@ -80,13 +82,13 @@ struct ContentView: View {
                     }
                     .padding()
                 }.background {
-                    RoundedRectangle(cornerRadius: 40)
-                        .foregroundColor(.white)
-                        .opacity(0.5)
-                        .blur(radius: /*@START_MENU_TOKEN@*/11.0/*@END_MENU_TOKEN@*/)
+                    //RoundedRectangle(cornerRadius: 40)
+                       // .foregroundColor(.white)
+                       // .opacity(0.5)
+                     //   .blur(radius: /*@START_MENU_TOKEN@*/11.0/*@END_MENU_TOKEN@*/)
                        // .scenePadding(/*@START_MENU_TOKEN@*/.minimum/*@END_MENU_TOKEN@*/, edges: /*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.yellow, lineWidth: 10)
+                    //RoundedRectangle(cornerRadius: 30)
+                     //   .strokeBorder(.yellow, lineWidth: 10)
                        // .frame(height: )
                 }
                 .navigationTitle("Today's Challenge")
