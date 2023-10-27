@@ -77,22 +77,6 @@ struct ContentView: View {
                                 }
                                 
                             }
-<<<<<<< HEAD
-                            
-                            
-                            
-                            
-=======
->>>>>>> main
-                        }
-                        }
-                        
-                    }
-                    
-                    
-                    
-                    .padding()
-<<<<<<< HEAD
                 }.navigationTitle("Today's Challenge is:")
                 
                 
