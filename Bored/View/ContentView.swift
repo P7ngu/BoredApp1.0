@@ -8,6 +8,7 @@
 //This is the Today challenges
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
@@ -28,54 +29,63 @@ struct ContentView: View {
     
     
     var body: some View {
-        
         TabView{
             NavigationStack{
                 ScrollView{
+                    ZStack{
+                        //Color.yellow.ignoresSafeArea().opacity(0.3)
                     VStack {
                         ZStack{
-                          
-                           // currentChallenge.color.ignoresSafeArea().opacity(0.2)
-                            VStack{
+                            //Color.yellow.opacity(0.2).ignoresSafeArea()
+                              //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                            VStack(alignment: .leading){
+                                
                                 Text(currentChallenge.name).bold().font(.title)
-                                    .foregroundStyle(.blue)
-                                    NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
-                                        VStack{
-                                            Image(currentChallenge.imageName)
-                                                .resizable()
-                                                .dynamicTypeSize(.medium)
-                                                .aspectRatio(contentMode: .fit)
-                                                .clipShape(Rectangle())
-                                                .shadow(radius: 10)
-                                                .opacity(0.5)
-                                                .padding(10)
-                                                .frame(width: 300, height: 300)
-                                            Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
-                                            HStack{
-                                        
-                                                Text("show details").font(.title2)
-                                                Image(systemName: "info.bubble")
-                                            }
+                                    .foregroundStyle(Color.orange)
+                                
+                                NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
+                                    VStack{
+                                        Image(currentChallenge.imageName)
+                                            .resizable()
+                                            .dynamicTypeSize(.medium)
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Rectangle())
+                                            .shadow(radius: 10)
+                                            .opacity(0.5)
+                                            .padding(10)
+                                            .frame(width: 300, height: 300)
+                                        Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
+                                        HStack{
+                                            Text("show details").font(.title2)
+                                            Image(systemName: "info.bubble")
                                         }
-                                    
+                                    }
                                     
                                 }
                                 
-                                
                             }
-                            
+                        }
                         }
                         
                     }
                     .padding()
+                }.background {
+                    RoundedRectangle(cornerRadius: 40)
+                        .foregroundColor(.yellow)
+                        .opacity(0.5)
+                        .blur(radius: /*@START_MENU_TOKEN@*/11.0/*@END_MENU_TOKEN@*/)
+                       // .scenePadding(/*@START_MENU_TOKEN@*/.minimum/*@END_MENU_TOKEN@*/, edges: /*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle(cornerRadius: 30)
+                        .strokeBorder(.orange, lineWidth: 10)
+                       // .frame(height: )
                 }
-                .navigationTitle("Today")
+                .navigationTitle("Today's Challenge")
                 .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-
+                
             }
             
             .tabItem {
-                Label("Today", systemImage: "cloud.sun")
+                Label("Today's Challenge", systemImage: "cloud.sun")
             }
             MemoriesView()
                 .tabItem{
