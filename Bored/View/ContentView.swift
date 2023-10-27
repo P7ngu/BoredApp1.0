@@ -12,31 +12,22 @@ import SwiftData
 
 struct ContentView: View {
     @State var viewmodel: ChallengeViewModel
+    var currentChallenge: Challenge
     
     init(modelContext: ModelContext){
         var viewmodel = ChallengeViewModel(modelContext: modelContext)
         _viewmodel = State(initialValue: viewmodel)
         currentChallenge = viewmodel.getTodaysChallenge()
     }
-    var currentChallenge: Challenge
-    
     
     @State var showSettings: Bool = false
-    
     var daycounter = 0;
     
-    //var currentDate = Time().getCurrentDate()
-    @Query var challengess: [Challenge]
+    @Query let challengess: [Challenge]
     @Environment(\.modelContext) var modelContext
     
-    
-    
     @State var isPickerShowing = false
-    
     @State var selectedImage: UIImage = UIImage()
-    
-    @State var selection: String = "Unaccepted"
-    let filterOptions: [String] = ["Unaccepted", "Accepted"]
     
  
     
@@ -69,6 +60,17 @@ struct ContentView: View {
                                         }
                                         
                                     }.foregroundStyle(Color.blue)
+                                }
+                                
+                                VStack{
+                                    GroupBox{
+                                        Text("Future challenges").font(.title)
+                                        
+                                        ForEach (challengess) {challenge in
+                                            HStack{
+                                                Text(challenge.name)
+                                            }}
+                                    }
                                 }
                                 
                             }
