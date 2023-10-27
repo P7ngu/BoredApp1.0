@@ -48,17 +48,13 @@ struct ContentView: View {
                     ZStack{
                         //Color.yellow.ignoresSafeArea().opacity(0.3)
                     VStack {
-                        ZStack{
-                            
-                            //Color.yellow.opacity(0.2).ignoresSafeArea()
+                        ZStack{//Color.yellow.opacity(0.2).ignoresSafeArea()
                               //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                             VStack(alignment: .leading){
-                                
-                                Text(currentChallenge.name).bold().font(.title)
-                                    .foregroundStyle(Color.orange)
-                                
                                 NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
                                     VStack{
+                                        Text(currentChallenge.name).bold().font(.title)
+                                            .foregroundStyle(Color.orange)
                                         Image(currentChallenge.imageName)
                                             .resizable()
                                             .dynamicTypeSize(.medium)
@@ -85,16 +81,16 @@ struct ContentView: View {
                     .padding()
                 }.background {
                     RoundedRectangle(cornerRadius: 40)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.white)
                         .opacity(0.5)
                         .blur(radius: /*@START_MENU_TOKEN@*/11.0/*@END_MENU_TOKEN@*/)
                        // .scenePadding(/*@START_MENU_TOKEN@*/.minimum/*@END_MENU_TOKEN@*/, edges: /*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.orange, lineWidth: 10)
+                        .strokeBorder(.yellow, lineWidth: 10)
                        // .frame(height: )
                 }
                 .navigationTitle("Today's Challenge")
-                .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+               // .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 
             }
             
