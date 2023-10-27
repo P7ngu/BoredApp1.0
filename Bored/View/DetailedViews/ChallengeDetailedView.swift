@@ -29,13 +29,12 @@ struct ChallengeDetailedView: View {
     
     var body: some View {
         NavigationView{
-            ZStack{ //to change the background color
-               // Color.yellow.ignoresSafeArea().opacity(0.5)
+            ZStack{
                 VStack{
                     ZStack{
                         Image(challenge.imageName)
                             .resizable()  //.aspectRatio(contentMode: .fit)
-                           // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                             .frame(width: 250, height: 250)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         
@@ -43,69 +42,66 @@ struct ChallengeDetailedView: View {
                             Image (uiImage: selectedImage)
                                 .resizable()
                             //.aspectRatio(contentMode: .fit)
-                               // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 .frame(width: 250, height: 250)
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                            
                         }
                     }
                     
                     Text(challenge.content)
                         .font(.callout).padding()
-                    if(challenge.completed == false){
-                        GroupBox(label:
-                                    Label("Your notes:", systemImage: "pencil.line")
-                        ){
-                            
-                            TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
-                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                .foregroundStyle(.gray)
-                                .foregroundColor(Color.gray)
-                            Button("Save notes") {
-                                let notes = userNotes
+                    
+                    ZStack{
+                        if(challenge.completed == false){
+                            GroupBox(label:
+                                        Label("Your notes:", systemImage: "pencil.line")
+                            ){
                                 
-                                MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
-                                showingConfirmation = true
-                                challenge.completed = true
-                                
-                            }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                                Button("OK", role: .cancel) {
-                                    showingConfirmation = false
+                                TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
+                                    .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                    .foregroundStyle(.gray)
+                                    .foregroundColor(Color.gray)
+                                Button("Save notes") {
+                                    let notes = userNotes
+                                    
+                                    MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
+                                    showingConfirmation = true
+                                    challenge.completed = true
+                                    
+                                }.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                    Button("OK", role: .cancel) {
+                                        showingConfirmation = false
+                                    }
                                 }
+                                
                             }
-                            
-                        }
-                    }else { // the challenge has already been completed, you can't edit the text anymore.
+                        }else { // the challenge has already been completed, you can't edit the text anymore.
                             
                             Text("You have already completed this challenge, congratulations!")
                                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                 .foregroundStyle(.purple)
-                                //.foregroundColor(Color.gray)
+                            //.foregroundColor(Color.gray)
                         }
-                    
-                    
-                
-                
-                
+                    }
+                }
             }
-        }
-    }.navigationTitle(challenge.name)
-        .toolbar{
-            Button{
-                isPickerShowing = true
-            } label: {
-                Text("")
-                Image(systemName: "photo.badge.plus")
+        }.navigationTitle(challenge.name)
+            .toolbar{
+                Button{
+                    isPickerShowing = true
+                } label: {
+                    Text("")
+                    Image(systemName: "photo.badge.plus")
+                }
+                .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
+                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                }
             }
-            .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-            }
-        }
-    
-}
+        
+    }
 }
 
 /*#Preview {
-    ChallengeDetailedView()
-}
-*/
+ ChallengeDetailedView()
+ }
+ */
