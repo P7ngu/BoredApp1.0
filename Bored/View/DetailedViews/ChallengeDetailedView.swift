@@ -9,7 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct ChallengeDetailedView: View {
-    var viewmodel = ChallengeViewModel();
+    @State var viewmodel: ChallengeViewModel
+    
+    init(modelContext: ModelContext, challenge: Challenge){
+        var viewmodel = ChallengeViewModel(modelContext: modelContext)
+        _viewmodel = State(initialValue: viewmodel)
+        self.challenge = challenge
+    }
     
     var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
@@ -57,6 +63,7 @@ struct ChallengeDetailedView: View {
                                 .foregroundColor(Color.gray)
                             Button("Save notes") {
                                 let notes = userNotes
+                                challenge.completed=true
                                 MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
                                 showingConfirmation = true
                                 
@@ -97,6 +104,7 @@ struct ChallengeDetailedView: View {
 }
 }
 
-#Preview {
+/*#Preview {
     ChallengeDetailedView()
 }
+*/

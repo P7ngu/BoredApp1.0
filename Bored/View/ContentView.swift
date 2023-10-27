@@ -11,11 +11,20 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State var viewmodel: ChallengeViewModel
+    
+    init(modelContext: ModelContext){
+        var viewmodel = ChallengeViewModel(modelContext: modelContext)
+        _viewmodel = State(initialValue: viewmodel)
+        currentChallenge = viewmodel.getTodaysChallenge()
+    }
+    var currentChallenge: Challenge
+    
     
     @State var showSettings: Bool = false
-    var viewmodel = ChallengeViewModel();
+    
     var daycounter = 0;
-    var currentChallenge = ChallengeViewModel().getTodaysChallenge()
+    
     //var currentDate = Time().getCurrentDate()
     @Query var challengess: [Challenge]
     @Environment(\.modelContext) var modelContext
@@ -48,7 +57,7 @@ struct ContentView: View {
                                 Text(currentChallenge.name).bold().font(.title)
                                     .foregroundStyle(Color.orange)
                                 
-                                NavigationLink(destination: ChallengeDetailedView(challenge: currentChallenge)){
+                                NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
                                     VStack{
                                         Image(currentChallenge.imageName)
                                             .resizable()
@@ -96,7 +105,7 @@ struct ContentView: View {
                 .tabItem{
                     Label ("Memories", systemImage: "memories")
                 }
-            AchievementsView()
+            AchievementsView(cvm: viewmodel)
                 .tabItem{
                     Label("Achievements", systemImage: "trophy.fill")
                 }
@@ -105,7 +114,7 @@ struct ContentView: View {
     
 }
 
-#Preview {
+/*#Preview {
    do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
       let container = try ModelContainer(for: Challenge.self, configurations: config)
@@ -117,4 +126,5 @@ struct ContentView: View {
         fatalError("Failed to create model container.")
     }
 }
+ */
 

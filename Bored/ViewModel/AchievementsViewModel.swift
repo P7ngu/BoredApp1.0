@@ -36,9 +36,9 @@ class AchievementsViewModel{
         return self.achievements;
     }
     
-    func getNumberOfCompletedChallenges() -> Double{
+    func getNumberOfCompletedChallenges(challviewmodel: ChallengeViewModel) -> Double{
         var tempNumOfChallenges = 0.0
-        completedChallenges = ChallengeViewModel().challenges
+        completedChallenges = challviewmodel.challenges
         for challenge in completedChallenges{
             if(challenge.completed ){
                 tempNumOfChallenges += 1.0;
@@ -49,9 +49,9 @@ class AchievementsViewModel{
         return tempNumOfChallenges
     }
     
-    func checkAchievementCompletitionRate() -> [Achievement] {
+    func checkAchievementCompletitionRate(challviewmodel: ChallengeViewModel) -> [Achievement] {
         //check completed challenges, then update the achievements
-        var numOfCompletedChallenges = getNumberOfCompletedChallenges()
+        var numOfCompletedChallenges = getNumberOfCompletedChallenges(challviewmodel: challviewmodel)
         
         achievements = getAchievements()
         

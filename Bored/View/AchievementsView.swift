@@ -9,7 +9,15 @@ import SwiftUI
 
 struct AchievementsView: View {
     var viewmodel = AchievementsViewModel()
-    var achievements = AchievementsViewModel().checkAchievementCompletitionRate()
+    @State var challviewmodel: ChallengeViewModel
+    var achievements: [Achievement]
+    
+    init(cvm: ChallengeViewModel){
+        let challviewmodel = cvm
+        _challviewmodel = State(initialValue: challviewmodel)
+        achievements = viewmodel.checkAchievementCompletitionRate(challviewmodel: challviewmodel)
+    }
+   
     
     var body: some View {
         
@@ -50,6 +58,7 @@ struct AchievementsView: View {
     }
 }
 
-#Preview {
-    AchievementsView()
-}
+/*#Preview {
+ AchievementsView()
+ }
+ */

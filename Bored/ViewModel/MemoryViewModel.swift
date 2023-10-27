@@ -29,15 +29,14 @@ class MemoryViewModel {
         }
     }
     
-    func getChallenges()-> [Challenge]{
-        var challviewmodel = ChallengeViewModel()
+    func getChallenges(challviewmodel: ChallengeViewModel)-> [Challenge]{
         challenges = challviewmodel.challenges
         return challenges
         
     }
     
-    func checkCompletedChallenges(context: ModelContext) -> [Challenge] {
-        challenges = getChallenges()
+    func checkCompletedChallenges(context: ModelContext, challviewmodel: ChallengeViewModel) -> [Challenge] {
+        challenges = getChallenges(challviewmodel: challviewmodel)
         print("Checking completed challenges..")
         for challenge in challenges {
             if challenge.completed {

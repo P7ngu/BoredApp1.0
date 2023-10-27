@@ -9,23 +9,27 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-class ChallengeViewModel{
+@Observable
+class ChallengeViewModel {
    // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
+    var modelContext: ModelContext
     
-    func fillDatabaseWithChallenges() ->Void {
-        @Environment(\.modelContext) var modelContext
+    init(modelContext: ModelContext){
+        self.modelContext = modelContext
+    }
+    
+    func fillDatabaseWithChallenges() {
         for(challenge) in challenges {
             modelContext.insert(challenge)
         }
-       
     }
     
-    func markTodaysChallengeAsCompleted(notes: String) -> Void{
+    func markTodaysChallengeAsCompleted(notes: String, challviewmodel: ChallengeViewModel) -> Void{
         @Environment(\.modelContext) var modelContext
         var tempChallenge = getTodaysChallenge()
         tempChallenge.completed = true
         print("set daily challenge as completed")
-        MemoryViewModel().checkCompletedChallenges(context: modelContext)
+        MemoryViewModel().checkCompletedChallenges(context: modelContext, challviewmodel: challviewmodel)
         MemoryViewModel().convertChallengeIntoMemory(challenge: tempChallenge, context: modelContext, notes: notes)
         
     }
