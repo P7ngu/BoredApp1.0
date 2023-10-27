@@ -10,6 +10,7 @@ import SwiftData
 
 struct ChallengeDetailedView: View {
     @State var viewmodel: ChallengeViewModel
+    @FocusState private var responseIsFocussed: Bool // dismiss response editor
     
     init(modelContext: ModelContext, challenge: Challenge){
         var viewmodel = ChallengeViewModel(modelContext: modelContext)
@@ -30,14 +31,13 @@ struct ChallengeDetailedView: View {
     var body: some View {
         NavigationView{
             ZStack{ //to change the background color
-               // Color.yellow.ignoresSafeArea().opacity(0.5)
                 VStack{
                     ZStack{
                         Image(challenge.imageName)
-                            .resizable()  //.aspectRatio(contentMode: .fit)
-                           // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .frame(width: 250, height: 250)
+                            .resizable().aspectRatio(contentMode: .fit)
+                        // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                            .padding()
                         
                         if (selectedImage != nil){
                             Image (uiImage: selectedImage)
@@ -52,12 +52,14 @@ struct ChallengeDetailedView: View {
                     
                     Text(challenge.content)
                         .font(.callout).padding()
+                    
                     if(challenge.completed == false){
                         GroupBox(label:
                                     Label("Your notes:", systemImage: "pencil.line")
                         ){
                             
                             TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
+                                .focused($responseIsFocussed)
                                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                 .foregroundStyle(.gray)
                                 .foregroundColor(Color.gray)
@@ -67,6 +69,7 @@ struct ChallengeDetailedView: View {
                                 MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
                                 showingConfirmation = true
                                 challenge.completed = true
+                                responseIsFocussed = false
                                 
                             }.alert("Notes saved!", isPresented: $showingConfirmation) {
                                 Button("OK", role: .cancel) {
