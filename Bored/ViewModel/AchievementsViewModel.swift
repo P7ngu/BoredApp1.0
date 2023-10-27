@@ -46,6 +46,8 @@ class AchievementsViewModel{
                 
             }
         }
+        print("the number of completed challenges is")
+        print(tempNumOfChallenges)
         return tempNumOfChallenges
     }
     

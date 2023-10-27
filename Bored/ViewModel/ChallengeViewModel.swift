@@ -25,6 +25,7 @@ class ChallengeViewModel {
         }
         return challenges
     }
+    
     func getChallengeList () -> [Challenge]{
         return challenges
     }

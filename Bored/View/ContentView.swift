@@ -98,13 +98,13 @@ struct ContentView: View {
                 //   .strokeBorder(.yellow, lineWidth: 10)
                 // .frame(height: )
             }
-            .navigationTitle("Today's Challenge")
+            .navigationTitle("Challenges")
             // .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             
         }
         
         .tabItem {
-            Label("Today's Challenge", systemImage: "cloud.sun")
+            Label("Challenges", systemImage: "cloud.sun")
         }
         MemoriesView()
             .tabItem{
