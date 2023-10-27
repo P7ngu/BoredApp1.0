@@ -17,7 +17,7 @@ struct ChallengeDetailedView: View {
         self.challenge = challenge
     }
     
-    var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
+    var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: false, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
@@ -32,6 +32,7 @@ struct ChallengeDetailedView: View {
         NavigationView{
             ZStack{
                 VStack{
+                    GroupBox{
                     ZStack{
                         Image(challenge.imageName)
                             .resizable()  //.aspectRatio(contentMode: .fit)
@@ -52,43 +53,43 @@ struct ChallengeDetailedView: View {
                     Text(challenge.content)
                         .font(.callout).padding()
                     
-                    ZStack{
-                        ForEach (challenges) { chall in
-                            if (chall.name == challenge.name){
-                                if(chall.completed == false){
-                                    GroupBox(label:
-                                                Label("Your notes:", systemImage: "pencil.line")
-                                    ){
-                                        
-                                        TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
-                                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                            .foregroundStyle(.gray)
-                                            .foregroundColor(Color.gray)
-                                        Button("Save notes") {
-                                            let notes = userNotes
+                        ZStack{
+                            ForEach (challenges) { chall in
+                                if (chall.name == challenge.name){
+                                    if(chall.completed == false){
+                                        GroupBox(label:
+                                                    Label("Your notes:", systemImage: "pencil.line")
+                                        ){
                                             
-                                            MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
-                                            showingConfirmation = true
-                                            chall.completed = true
-                                            challenge.completed = true
-                                            
-                                        }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                                            Button("OK", role: .cancel) {
-                                                showingConfirmation = false
+                                            TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
+                                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                                .foregroundStyle(.gray)
+                                                .foregroundColor(Color.gray)
+                                            Button("Save notes") {
+                                                let notes = userNotes
+                                                
+                                                MemoryViewModel(challenges: challenges).convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
+                                                showingConfirmation = true
+                                                chall.completed = true
+                                                challenge.completed = true
+                                                
+                                            }.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                                Button("OK", role: .cancel) {
+                                                    showingConfirmation = false
+                                                }
                                             }
+                                            
                                         }
+                                    }else { // the challenge has already been completed, you can't edit the text anymore.
                                         
+                                        Text("You have already completed this challenge, congratulations!")
+                                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                            .foregroundStyle(.purple)
+                                        //.foregroundColor(Color.gray)
                                     }
-                                }else { // the challenge has already been completed, you can't edit the text anymore.
-                                    
-                                    Text("You have already completed this challenge, congratulations!")
-                                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
-                                        .foregroundStyle(.purple)
-                                    //.foregroundColor(Color.gray)
                                 }
                             }
                         }
-                       
                     }
                 }
             }

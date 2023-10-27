@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct MemoryDetailedView: View {
-    var viewmodel = MemoryViewModel();
+    //var viewmodel = MemoryViewModel();
     @Bindable var memory: Memory
     @State private var showingConfirmation = false
     //var memory = Memory(name: "Test", content: "Test", notes: "Test", imageName: "")

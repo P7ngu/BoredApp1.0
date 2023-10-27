@@ -13,7 +13,7 @@ import SwiftData
 struct ContentView: View {
     @State var viewmodel: ChallengeViewModel
     var currentChallenge: Challenge
-    var tempChallenges: [Challenge] = [Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())]
+    var tempChallenges: [Challenge] = [Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: false, imageName: "noimagename", assignedDate: Time().getCurrentDate())]
     
     init(modelContext: ModelContext){
         var viewmodel = ChallengeViewModel(modelContext: modelContext)
@@ -30,6 +30,22 @@ struct ContentView: View {
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
     
+    func updateChallenges() -> [Challenge]{
+        for forchallenge in viewmodel.challenges{ //Check the challenges in the DB
+            if forchallenge.completed{
+                for challengeToUpdate in viewmodel.challenges{
+                    challengeToUpdate.completed = true
+                }
+            }
+        }
+        if(challengess != nil){
+           // viewmodel.challenges = challengess
+            
+          //  return challengess
+        }
+        return viewmodel.challenges
+    }
+    
     var body: some View {
         TabView{
             NavigationStack{
@@ -39,7 +55,6 @@ struct ContentView: View {
                         VStack {
                             ZStack{//Color.yellow.opacity(0.2).ignoresSafeArea()
                                 //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                                
                                 VStack(alignment: .leading){
                                     NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
                                         GroupBox{
@@ -60,11 +75,10 @@ struct ContentView: View {
                                     }
                                     
                                     VStack{
-                                       
-                                            
                                         if challengess.isEmpty
                                         {
-                                            var challeng = viewmodel.getTodaysChallenge(dbChallenges: challengess)
+                                            var challeng = updateChallenges()
+                                            var challeng3 = viewmodel.getTodaysChallenge(dbChallenges: challengess)
                                             var challenges = viewmodel.fillDatabaseWithChallenges()
                                         }
                                         GroupBox{

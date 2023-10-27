@@ -11,7 +11,7 @@ import SwiftData
 
 @Observable
 class ChallengeViewModel {
-   // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
+   // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: false, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     var modelContext: ModelContext
     var completedChallengeCounter: Double = 0.0
     
@@ -39,14 +39,16 @@ class ChallengeViewModel {
         var tempChallenge = getTodaysChallenge(dbChallenges: dbChallenges)
         tempChallenge.completed = true
         print("set daily challenge as completed")
-        MemoryViewModel().checkCompletedChallenges(context: modelContext, challviewmodel: challviewmodel)
-        MemoryViewModel().convertChallengeIntoMemory(challenge: tempChallenge, context: modelContext, notes: notes)
+        MemoryViewModel(challenges: challenges).checkCompletedChallenges(context: modelContext, challviewmodel: challviewmodel)
+        MemoryViewModel(challenges: challenges).convertChallengeIntoMemory(challenge: tempChallenge, context: modelContext, notes: notes)
         
     }
     
     func getTodaysChallenge(dbChallenges: [Challenge]) -> Challenge{
-        for challenge in dbChallenges {
+        for challenge in dbChallenges { //does not work
             if challenge.completed{
+                print ("incrementing the counter, because of ")
+                       print(challenge.name)
                 completedChallengeCounter = completedChallengeCounter+1
             }
         }
@@ -61,8 +63,7 @@ class ChallengeViewModel {
                 
             }
         }
-        
-        return challenges.last!
+                return challenges.last!
         
     }
     

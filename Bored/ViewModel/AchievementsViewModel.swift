@@ -37,9 +37,9 @@ class AchievementsViewModel{
     }
     
     func getNumberOfCompletedChallenges(challviewmodel: ChallengeViewModel) -> Double{
-        print("the number of completed challenges is")
-        print(challviewmodel.completedChallengeCounter)
-        return challviewmodel.completedChallengeCounter
+        print("the number of completed challenges is: printing numberofmemo")
+        print(MemoryViewModel(challenges: challviewmodel.challenges).numberOfMemories)
+        return MemoryViewModel(challenges: challviewmodel.challenges).numberOfMemories
     }
     
     func checkAchievementCompletitionRate(challviewmodel: ChallengeViewModel) -> [Achievement] {
@@ -49,8 +49,9 @@ class AchievementsViewModel{
         achievements = getAchievements()
         
         for achievement in achievements {
+           // numOfCompletedChallenges = challviewmodel.completedChallengeCounter
             var updatedCompletitionStatus = ((numOfCompletedChallenges) / (achievement.completitionMaxPoints))
-            print("The number of completed challenge is: ")
+           // print("The number of completed challenge is: ")
             print(numOfCompletedChallenges)
             
             var updatedAchievement = Achievement(id: UUID(), name: achievement.name, content: achievement.content, completitionStatus: updatedCompletitionStatus, completitionMaxPoints: achievement.completitionMaxPoints, completitionPoints: numOfCompletedChallenges, imageName: achievement.imageName)

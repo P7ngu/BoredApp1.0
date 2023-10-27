@@ -10,7 +10,7 @@ import SwiftData
 
 
 struct MemoriesView: View {
-    var viewmodel = MemoryViewModel()
+    //var viewmodel = MemoryViewModel()
     //var completedChallenges = MemoryViewModel().checkCompletedChallenges(context: modelContext)
     
     @Query var memories: [Memory]
