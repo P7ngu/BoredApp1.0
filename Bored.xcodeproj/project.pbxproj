@@ -41,7 +41,7 @@
 		6365D2FA2AE124420019170B /* AchievementDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailedView.swift; sourceTree = "<group>"; };
 		6365D2FC2AE124940019170B /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		6365D3012AE127490019170B /* ChallengeDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailedView.swift; sourceTree = "<group>"; };
-		6388B6FF2ADE940300CCA6B6 /* Bored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bored.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6388B6FF2ADE940300CCA6B6 /* Fabries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6388B7022ADE940300CCA6B6 /* BoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredApp.swift; sourceTree = "<group>"; };
 		6388B7042ADE940300CCA6B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6388B7062ADE940500CCA6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		6388B7002ADE940300CCA6B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6388B6FF2ADE940300CCA6B6 /* Bored.app */,
+				6388B6FF2ADE940300CCA6B6 /* Fabries.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,9 +144,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6388B6FE2ADE940300CCA6B6 /* Bored */ = {
+		6388B6FE2ADE940300CCA6B6 /* Fabries */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6388B70D2ADE940500CCA6B6 /* Build configuration list for PBXNativeTarget "Bored" */;
+			buildConfigurationList = 6388B70D2ADE940500CCA6B6 /* Build configuration list for PBXNativeTarget "Fabries" */;
 			buildPhases = (
 				6388B6FB2ADE940300CCA6B6 /* Sources */,
 				6388B6FC2ADE940300CCA6B6 /* Frameworks */,
@@ -156,9 +156,9 @@
 			);
 			dependencies = (
 			);
-			name = Bored;
+			name = Fabries;
 			productName = Bored;
-			productReference = 6388B6FF2ADE940300CCA6B6 /* Bored.app */;
+			productReference = 6388B6FF2ADE940300CCA6B6 /* Fabries.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6388B6FE2ADE940300CCA6B6 /* Bored */,
+				6388B6FE2ADE940300CCA6B6 /* Fabries */,
 			);
 		};
 /* End PBXProject section */
@@ -363,6 +363,7 @@
 				DEVELOPMENT_TEAM = 5Y7P52GGAD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fabries;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -394,6 +395,7 @@
 				DEVELOPMENT_TEAM = 5Y7P52GGAD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fabries;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -426,7 +428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6388B70D2ADE940500CCA6B6 /* Build configuration list for PBXNativeTarget "Bored" */ = {
+		6388B70D2ADE940500CCA6B6 /* Build configuration list for PBXNativeTarget "Fabries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6388B70E2ADE940500CCA6B6 /* Debug */,
