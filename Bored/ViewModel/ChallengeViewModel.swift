@@ -13,6 +13,7 @@ import SwiftData
 class ChallengeViewModel {
    // var todaysChallenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     var modelContext: ModelContext
+    var completedChallengeCounter: Double = 0.0
     
     init(modelContext: ModelContext){
         self.modelContext = modelContext
@@ -22,6 +23,9 @@ class ChallengeViewModel {
         for challenge in challenges {
             modelContext.insert(challenge)
             print("Just inserted a challenge into the db")
+            if challenge.completed{
+                //completedChallengeCounter = completedChallengeCounter+1
+            }
         }
         return challenges
     }
@@ -30,9 +34,9 @@ class ChallengeViewModel {
         return challenges
     }
     
-    func markTodaysChallengeAsCompleted(notes: String, challviewmodel: ChallengeViewModel) -> Void{
+    func markTodaysChallengeAsCompleted(notes: String, challviewmodel: ChallengeViewModel, dbChallenges: [Challenge]) -> Void{
         @Environment(\.modelContext) var modelContext
-        var tempChallenge = getTodaysChallenge()
+        var tempChallenge = getTodaysChallenge(dbChallenges: dbChallenges)
         tempChallenge.completed = true
         print("set daily challenge as completed")
         MemoryViewModel().checkCompletedChallenges(context: modelContext, challviewmodel: challviewmodel)
@@ -40,9 +44,12 @@ class ChallengeViewModel {
         
     }
     
-    func getTodaysChallenge() -> Challenge{
-        //TODO: put an if
-        //fillDatabaseWithChallenges()
+    func getTodaysChallenge(dbChallenges: [Challenge]) -> Challenge{
+        for challenge in dbChallenges {
+            if challenge.completed{
+                completedChallengeCounter = completedChallengeCounter+1
+            }
+        }
         let currentDate = Time().getCurrentDate()
         for challenge in challenges {
             //print("for iteration")
@@ -60,9 +67,9 @@ class ChallengeViewModel {
     }
     
     var challenges = [
-        Challenge(id: UUID(), name: "Nature Walking 🍃", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", completed: true, imageName: "naturewalk", assignedDate: "01"),
-        Challenge(id: UUID(), name: "Morning Coffee ☕️", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", completed: true, imageName: "coffee", assignedDate: "02"),
-        Challenge(id: UUID(), name: "Doodle or Sketch ✍🏻", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process", completed: true, imageName: "doodle 1", assignedDate: "03"),
+        Challenge(id: UUID(), name: "Nature Walking 🍃", content: "For this challenge you need to... Take a short walk in a nearby park or garden, snap a photo of something in nature, and reflect on how it made you feel", completed: false, imageName: "naturewalk", assignedDate: "01"),
+        Challenge(id: UUID(), name: "Morning Coffee ☕️", content: "For this challenge you need to... Enjoy your morning beverage, capture the moment with a photo, and reflect on the calmness it brings to your day.", completed: false, imageName: "coffee", assignedDate: "02"),
+        Challenge(id: UUID(), name: "Doodle or Sketch ✍🏻", content: "For this challenge you need to... Spend a few minutes drawing something simple, take a photo of your creation, and reflect on the creative process", completed: false, imageName: "doodle 1", assignedDate: "03"),
         Challenge(id: UUID(), name: "Healthy Snack 🍿", content: "For this challenge you need to... Prepare a quick, healthy snack, photograph it, and reflect on the importance of nourishing your body." , completed: false, imageName: "lunch", assignedDate: "04"),
         Challenge(id: UUID(), name: "Sunset/Sunrise 🌅", content: "For this challenge you need to... Take a photo of the sunset or sunrise and reflect on the beauty of the natural world.", completed: false, imageName: "sunset", assignedDate: "05"),
         Challenge(id: UUID(), name: "Favourite Book Page 📖", content: "For this challenge you need to... Open your favourite book to a random page, read a passage, take a photo, and reflect on the words' meaning in your life.", completed: false, imageName: "bookpage", assignedDate: "06"),

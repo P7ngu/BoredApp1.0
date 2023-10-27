@@ -13,16 +13,17 @@ import SwiftData
 struct ContentView: View {
     @State var viewmodel: ChallengeViewModel
     var currentChallenge: Challenge
+    var tempChallenges: [Challenge] = [Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())]
     
     init(modelContext: ModelContext){
         var viewmodel = ChallengeViewModel(modelContext: modelContext)
         _viewmodel = State(initialValue: viewmodel)
-        currentChallenge = viewmodel.getTodaysChallenge()
+        currentChallenge = viewmodel.getTodaysChallenge(dbChallenges: tempChallenges)
     }
     
     @State var showSettings: Bool = false
     var daycounter = 0;
-    
+  
     @Query let challengess: [Challenge]
     @Environment(\.modelContext) var modelContext
     
@@ -38,6 +39,7 @@ struct ContentView: View {
                         VStack {
                             ZStack{//Color.yellow.opacity(0.2).ignoresSafeArea()
                                 //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                                
                                 VStack(alignment: .leading){
                                     NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
                                         GroupBox{
@@ -62,6 +64,7 @@ struct ContentView: View {
                                             
                                         if challengess.isEmpty
                                         {
+                                            var challeng = viewmodel.getTodaysChallenge(dbChallenges: challengess)
                                             var challenges = viewmodel.fillDatabaseWithChallenges()
                                         }
                                         GroupBox{

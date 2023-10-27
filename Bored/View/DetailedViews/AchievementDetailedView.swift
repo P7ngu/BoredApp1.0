@@ -10,7 +10,7 @@ import SwiftUI
 struct AchievementDetailedView: View {
     var viewmodel = AchievementsViewModel()
     
-    var achievement = Achievement(name: "Test achievement", content: "Test content", completed: false, completitionStatus: 0.8, completitionMaxPoints: 23.0)
+    var achievement = Achievement(id: UUID(), name: "Test achievement", content: "Test content", completitionStatus: 0.8, completitionMaxPoints: 23.0, completitionPoints: 1.0, imageName: "trofeo")
     
     var body: some View {
         NavigationView{
