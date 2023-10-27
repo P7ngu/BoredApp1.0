@@ -36,8 +36,8 @@ struct ContentView: View {
                         //Color.yellow.ignoresSafeArea().opacity(0.3)
                     VStack {
                         ZStack{
-                            Color.yellow.opacity(0.2).ignoresSafeArea()
-                                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                            //Color.yellow.opacity(0.2).ignoresSafeArea()
+                              //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                             VStack(alignment: .leading){
                                 
                                 Text(currentChallenge.name).bold().font(.title)
@@ -69,6 +69,15 @@ struct ContentView: View {
                         
                     }
                     .padding()
+                }.background {
+                    RoundedRectangle(cornerRadius: 40)
+                        .foregroundColor(.yellow)
+                        .opacity(0.5)
+                        .blur(radius: /*@START_MENU_TOKEN@*/11.0/*@END_MENU_TOKEN@*/)
+                       // .scenePadding(/*@START_MENU_TOKEN@*/.minimum/*@END_MENU_TOKEN@*/, edges: /*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle(cornerRadius: 30)
+                        .strokeBorder(.orange, lineWidth: 10)
+                       // .frame(height: )
                 }
                 .navigationTitle("Today's Challenge")
                 .foregroundStyle(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
