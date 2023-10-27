@@ -9,32 +9,27 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-//@Model
+@Model
 class Challenge: Identifiable{
     var id: UUID = UUID()
     var name: String;
     var content: String;
-    var color: Color = Color.blue;
     var completed: Bool = false; //if it has been completed then it is also a memory
     var imageName: String = "noimage";
     var assignedDate: String = Time().getCurrentDate()
     
-    @Attribute(.externalStorage)
-    var image: Data?
-    
-    init(id: UUID, name: String, content: String, color: Color, completed: Bool, imageName: String, assignedDate: String, image: Data? = nil) {
+    init(id: UUID, name: String, content: String, completed: Bool, imageName: String, assignedDate: String) {
         self.id = id
         self.name = name
         self.content = content
-        self.color = color
         self.completed = completed
         self.imageName = imageName
         self.assignedDate = assignedDate
-        self.image = image
     }
     
     func markChallengeAsCompleted(challengeToMark: Challenge) ->Void{
         challengeToMark.completed = true;
     }
+    
 }
     

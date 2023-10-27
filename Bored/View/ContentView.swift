@@ -17,6 +17,8 @@ struct ContentView: View {
     var daycounter = 0;
     var currentChallenge = ChallengeViewModel().getTodaysChallenge()
     //var currentDate = Time().getCurrentDate()
+    @Query var challengess: [Challenge]
+    @Environment(\.modelContext) var modelContext
     
     
     
@@ -27,6 +29,8 @@ struct ContentView: View {
     @State var selection: String = "Unaccepted"
     let filterOptions: [String] = ["Unaccepted", "Accepted"]
     
+ 
+    
     
     var body: some View {
         TabView{
@@ -36,6 +40,7 @@ struct ContentView: View {
                         //Color.yellow.ignoresSafeArea().opacity(0.3)
                     VStack {
                         ZStack{
+                            
                             //Color.yellow.opacity(0.2).ignoresSafeArea()
                               //  .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                             VStack(alignment: .leading){
@@ -101,7 +106,15 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+   do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+      let container = try ModelContainer(for: Challenge.self, configurations: config)
+        
+        let example = Challenge(id: UUID(), name: "mkrmf", content: "diejd", completed: false, imageName: "noimafe", assignedDate: "00")
+        return ContentView()
+            .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container.")
+    }
 }
-
 

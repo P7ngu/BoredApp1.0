@@ -14,6 +14,7 @@ struct MemoriesView: View {
     //var completedChallenges = MemoryViewModel().checkCompletedChallenges(context: modelContext)
     
     @Query var memories: [Memory]
+    @Query var challengess: [Challenge]
     @Environment(\.modelContext) var modelContext
     
     var body: some View {

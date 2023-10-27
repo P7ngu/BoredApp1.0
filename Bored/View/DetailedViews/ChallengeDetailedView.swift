@@ -11,7 +11,7 @@ import SwiftData
 struct ChallengeDetailedView: View {
     var viewmodel = ChallengeViewModel();
     
-    var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  color: .blue, completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
+    var challenge = Challenge(id: UUID(), name: "Test challenge", content: "Test content test siejwodijwoifjeoijfioewjfioewjfoiejfoiewjoifjoeifjofie",  completed: true, imageName: "noimagename", assignedDate: Time().getCurrentDate())
     
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
