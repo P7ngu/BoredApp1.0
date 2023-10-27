@@ -54,17 +54,13 @@ struct ContentView: View {
                                 NavigationLink(destination: ChallengeDetailedView(modelContext: modelContext, challenge: currentChallenge)){
                                     GroupBox{
                                         VStack{
-                                            Text(currentChallenge.name).bold().font(.title)
-                                                .foregroundStyle(Color.orange)
+                                            //Text(currentChallenge.name).bold().font(.title)
+                                           //     .foregroundStyle(Color.orange)
                                             Image(currentChallenge.imageName)
-                                                .resizable()
-                                                .dynamicTypeSize(.medium)
-                                                .aspectRatio(contentMode: .fit)
-                                                .clipShape(Rectangle())
-                                                .shadow(radius: 10)
-                                                .opacity(0.5)
-                                                .padding(10)
-                                                .frame(width: 300, height: 300)
+                                                .resizable().aspectRatio(contentMode: .fit)
+                                            // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                                .padding()
                                             Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
                                             HStack{
                                                 Text("show details").font(.title2)

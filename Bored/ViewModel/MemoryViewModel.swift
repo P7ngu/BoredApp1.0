@@ -21,6 +21,7 @@ class MemoryViewModel {
         if (challenge.completed == false){
             var newCreatedMemory: Memory = Memory(name: challenge.name, content: challenge.content, notes: notes , imageName: challenge.imageName)
             context.insert(newCreatedMemory)
+            print("Just inserted a new memory")
             challenge.completed=true
         }
         else

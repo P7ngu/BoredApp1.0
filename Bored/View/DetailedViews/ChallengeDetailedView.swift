@@ -35,16 +35,16 @@ struct ChallengeDetailedView: View {
                     ZStack{
                         Image(challenge.imageName)
                             .resizable()  //.aspectRatio(contentMode: .fit)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .frame(width: 150, height: 150)
+                           // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .frame(width: 250, height: 250)
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         
                         if (selectedImage != nil){
                             Image (uiImage: selectedImage)
                                 .resizable()
                             //.aspectRatio(contentMode: .fit)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                .frame(width: 150, height: 150)
+                               // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .frame(width: 250, height: 250)
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             
                         }
@@ -63,9 +63,10 @@ struct ChallengeDetailedView: View {
                                 .foregroundColor(Color.gray)
                             Button("Save notes") {
                                 let notes = userNotes
-                                challenge.completed=true
+                                
                                 MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
                                 showingConfirmation = true
+                                challenge.completed = true
                                 
                             }.alert("Notes saved!", isPresented: $showingConfirmation) {
                                 Button("OK", role: .cancel) {
@@ -79,7 +80,7 @@ struct ChallengeDetailedView: View {
                             Text("You have already completed this challenge, congratulations!")
                                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                 .foregroundStyle(.purple)
-                                .foregroundColor(Color.gray)
+                                //.foregroundColor(Color.gray)
                         }
                     
                     

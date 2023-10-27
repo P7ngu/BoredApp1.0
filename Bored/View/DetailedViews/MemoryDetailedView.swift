@@ -20,7 +20,7 @@ struct MemoryDetailedView: View {
                 //Color.purple.ignoresSafeArea().opacity(0.5)
                 VStack{
                     Image(memory.imageName).resizable().aspectRatio(contentMode: .fit)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                       // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         .padding()
                     Text(memory.content)
