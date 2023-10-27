@@ -14,12 +14,9 @@ struct AchievementDetailedView: View {
     
     var body: some View {
         NavigationView{
-        
             ZStack{ //to change the background color
                 // .blue.ignoresSafeArea().opacity(0.5)
                // Color.yellow.ignoresSafeArea().opacity(0.5)
-                
-                
                 VStack{
                     Image(achievement.imageName).resizable().aspectRatio(contentMode: .fit)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)

@@ -12,7 +12,7 @@ class MemoryViewModel {
     init(challenges: [Challenge]){
         for challenge in challenges{
             if(challenge.completed){
-                numberOfMemories += 1
+               // numberOfMemories += 1
             }
         }
     }
@@ -30,13 +30,13 @@ class MemoryViewModel {
         if (challenge.completed == false){
             var newCreatedMemory: Memory = Memory(name: challenge.name, content: challenge.content, notes: notes , imageName: challenge.imageName)
             context.insert(newCreatedMemory)
-            self.numberOfMemories += 1
+           //self.numberOfMemories += 1
             print("Just inserted a new memory")
             challenge.completed = true
         }
         else
         {
-            numberOfMemories = numberOfMemories + 1.0
+           // numberOfMemories = numberOfMemories + 1.0
         }
     }
     

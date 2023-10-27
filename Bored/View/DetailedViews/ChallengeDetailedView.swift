@@ -69,6 +69,8 @@ struct ChallengeDetailedView: View {
                                                 let notes = userNotes
                                                 
                                                 MemoryViewModel(challenges: challenges).convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)
+                                                
+                                               // viewmodel.completedChallengeCounter += 1 //not persistent
                                                 showingConfirmation = true
                                                 chall.completed = true
                                                 challenge.completed = true

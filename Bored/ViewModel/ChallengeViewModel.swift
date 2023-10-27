@@ -49,7 +49,7 @@ class ChallengeViewModel {
             if challenge.completed{
                 print ("incrementing the counter, because of ")
                        print(challenge.name)
-                completedChallengeCounter = completedChallengeCounter+1
+              //  completedChallengeCounter = completedChallengeCounter+1
             }
         }
         let currentDate = Time().getCurrentDate()

@@ -25,28 +25,41 @@ struct ContentView: View {
     var daycounter = 0;
   
     @Query let challengess: [Challenge]
+    
+   
+    
     @Environment(\.modelContext) var modelContext
     
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
     
+  
+    
+   
+    
     func updateChallenges() -> [Challenge]{
-        for forchallenge in viewmodel.challenges{ //Check the challenges in the DB
-            if forchallenge.completed{
-                for challengeToUpdate in viewmodel.challenges{
+        let descriptor = FetchDescriptor<Challenge>(predicate: #Predicate { $0.completed })
+        let count = (try? modelContext.fetchCount(descriptor)) ?? 0
+        print("number of fetched memories: ")
+        print(count)
+        viewmodel.completedChallengeCounter = Double(count)
+        for forchallenge in challengess{ //Check the challenges in the DB
+            for challengeToUpdate in viewmodel.challenges{
+                if forchallenge.completed == true && challengeToUpdate.completed==false 
+                    && forchallenge.name == challengeToUpdate.name {
+                   // print("update challenges")
+                   // viewmodel.completedChallengeCounter += 1
+                    print(viewmodel.completedChallengeCounter)
                     challengeToUpdate.completed = true
                 }
             }
-        }
-        if(challengess != nil){
-           // viewmodel.challenges = challengess
-            
-          //  return challengess
         }
         return viewmodel.challenges
     }
     
     var body: some View {
+        var test: [Challenge] = updateChallenges()
+       
         TabView{
             NavigationStack{
                 ScrollView{
@@ -75,9 +88,11 @@ struct ContentView: View {
                                     }
                                     
                                     VStack{
+                                       
                                         if challengess.isEmpty
                                         {
-                                            var challeng = updateChallenges()
+                                           // var challeng = updateChallenges()
+                    
                                             var challeng3 = viewmodel.getTodaysChallenge(dbChallenges: challengess)
                                             var challenges = viewmodel.fillDatabaseWithChallenges()
                                         }

@@ -44,8 +44,7 @@ class AchievementsViewModel{
     
     func checkAchievementCompletitionRate(challviewmodel: ChallengeViewModel) -> [Achievement] {
         //check completed challenges, then update the achievements
-        var numOfCompletedChallenges = getNumberOfCompletedChallenges(challviewmodel: challviewmodel)
-        
+        var numOfCompletedChallenges = challviewmodel.completedChallengeCounter
         achievements = getAchievements()
         
         for achievement in achievements {
