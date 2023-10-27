@@ -68,14 +68,14 @@ struct ContentView: View {
                                                     .resizable().aspectRatio(contentMode: .fit)
                                                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                                     .padding()
-                                                Text("For this challenge you need to...").font(.title2).foregroundStyle(.black)
+                                                Text("For this challenge you need to...").font(.title2)
                                                 HStack{
                                                     Text("show details").font(.title2)
-                                                    Image(systemName: "info.bubble")
+                                                    Image(systemName: "info.bubble")//.foregroundStyle(Color.blue)
                                                 }
                                             }
                                             
-                                        }.foregroundStyle(Color.blue)
+                                        }
                                             .padding(20)
                                     }
                                     
