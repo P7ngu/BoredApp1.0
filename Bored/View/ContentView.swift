@@ -25,17 +25,10 @@ struct ContentView: View {
     var daycounter = 0;
   
     @Query let challengess: [Challenge]
-    
-   
-    
     @Environment(\.modelContext) var modelContext
     
     @State var isPickerShowing = false
     @State var selectedImage: UIImage = UIImage()
-    
-  
-    
-   
     
     func updateChallenges() -> [Challenge]{
         let descriptor = FetchDescriptor<Challenge>(predicate: #Predicate { $0.completed })
@@ -59,7 +52,6 @@ struct ContentView: View {
     
     var body: some View {
         var test: [Challenge] = updateChallenges()
-       
         TabView{
             NavigationStack{
                 ScrollView{
