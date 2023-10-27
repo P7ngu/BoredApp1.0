@@ -9,25 +9,47 @@ import SwiftUI
 
 struct AchievementsView: View {
     var viewmodel = AchievementsViewModel()
+    @State var challviewmodel: ChallengeViewModel
+    var achievements: [Achievement]
+    
+    init(cvm: ChallengeViewModel){
+        let challviewmodel = cvm
+        _challviewmodel = State(initialValue: challviewmodel)
+        achievements = viewmodel.checkAchievementCompletitionRate(challviewmodel: challviewmodel)
+    }
+   
     
     var body: some View {
         
         NavigationStack{
             List {
-                ForEach(viewmodel.achievements){ achievement in
+                
+                ForEach(achievements){ achievement in
                     
                     NavigationLink{
                         AchievementDetailedView(achievement: achievement)
                         
                     } label: {
-                        HStack {
-                            //opposite to VStack, there is also ZStack
-                            Image(systemName: "puzzlepiece.extension.fill")
-                                .imageScale(.large)
-                                .foregroundStyle(.blue);
-                            Text (achievement.name).bold()
+                        HStack{
                             
-                        }.padding()
+                            Image(achievement.imageName)
+                                .resizable()
+                                .frame(width: 50, height: 60)
+                                .imageScale(.small)
+                                .foregroundStyle(.blue)
+                                .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+                            
+                            VStack{
+                                HStack {
+                                    //opposite to VStack, there is also ZStack
+                                    
+                                    Text (achievement.name).bold()
+                                        .scaledToFill()
+                                    
+                                }//.padding()
+                                ProgressView(value: achievement.completitionStatus).padding()
+                            }
+                        }
                     }
                     //.padding()
                 }
@@ -36,6 +58,7 @@ struct AchievementsView: View {
     }
 }
 
-#Preview {
-    AchievementsView()
-}
+/*#Preview {
+ AchievementsView()
+ }
+ */

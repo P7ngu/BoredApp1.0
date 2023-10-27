@@ -6,14 +6,49 @@
 //
 
 import Foundation
-import SwiftUI
+import SwiftData
 
-class MemoryViewModel{
-    var memories = [
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to..."),
-        Challenge(name: "First Challenge", content: "For this challenge you need to...")
-    ]
+class MemoryViewModel {
+    
+    var challenges: [Challenge] = []
+    var completedChallenges: [Challenge] = []
+    
+    func getTodaysCompletedMemory() -> Void {
+        
+    }
+    
+    func convertChallengeIntoMemory (challenge: Challenge, context: ModelContext, notes: String) -> Void {
+        if (challenge.completed == false){
+            var newCreatedMemory: Memory = Memory(name: challenge.name, content: challenge.content, notes: notes , imageName: challenge.imageName)
+            context.insert(newCreatedMemory)
+            challenge.completed=true
+        }
+        else
+        {
+            
+        }
+    }
+    
+    func getChallenges(challviewmodel: ChallengeViewModel)-> [Challenge]{
+        challenges = challviewmodel.challenges
+        return challenges
+        
+    }
+    
+    func checkCompletedChallenges(context: ModelContext, challviewmodel: ChallengeViewModel) -> [Challenge] {
+        challenges = getChallenges(challviewmodel: challviewmodel)
+        print("Checking completed challenges..")
+        for challenge in challenges {
+            if challenge.completed {
+                MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: context, notes: "No notes")
+                completedChallenges.append(challenge)
+                print("Found a completed challenge...")
+            } else { 
+            }
+        }
+        
+        return completedChallenges
+    }
+    
 }
+

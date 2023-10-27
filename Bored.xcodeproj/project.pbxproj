@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6308E4942AE2787B00CB6C2A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308E4932AE2787B00CB6C2A /* ImagePicker.swift */; };
+		632AF4232AEA7A8400559D23 /* MemoryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 632AF4212AEA7A8400559D23 /* MemoryModel.xcdatamodeld */; };
+		632AF4252AEAD63A00559D23 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF4242AEAD63A00559D23 /* Memory.swift */; };
+		6362EB5F2AE28B66004703BB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6362EB5E2AE28B66004703BB /* Time.swift */; };
 		6365D2EF2AE118A10019170B /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2EE2AE118A10019170B /* ChallengeViewModel.swift */; };
 		6365D2F12AE11E690019170B /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F02AE11E690019170B /* MemoriesView.swift */; };
 		6365D2F32AE11EBC0019170B /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D2F22AE11EBC0019170B /* AchievementsView.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6308E4932AE2787B00CB6C2A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		632AF4222AEA7A8400559D23 /* MemoryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoryModel.xcdatamodel; sourceTree = "<group>"; };
+		632AF4242AEAD63A00559D23 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		6362EB5E2AE28B66004703BB /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		6365D2EE2AE118A10019170B /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
 		6365D2F02AE11E690019170B /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
 		6365D2F22AE11EBC0019170B /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
@@ -58,6 +66,8 @@
 				6365D2EE2AE118A10019170B /* ChallengeViewModel.swift */,
 				6365D2F42AE120310019170B /* MemoryViewModel.swift */,
 				6365D2F82AE122930019170B /* AchievementsViewModel.swift */,
+				6308E4932AE2787B00CB6C2A /* ImagePicker.swift */,
+				6362EB5E2AE28B66004703BB /* Time.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,6 +135,8 @@
 			children = (
 				63D5219C2ADFE53A00EAE4BC /* ChallengeModel.swift */,
 				6365D2FC2AE124940019170B /* AchievementModel.swift */,
+				632AF4212AEA7A8400559D23 /* MemoryModel.xcdatamodeld */,
+				632AF4242AEAD63A00559D23 /* Memory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,13 +211,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6308E4942AE2787B00CB6C2A /* ImagePicker.swift in Sources */,
 				6365D2FD2AE124940019170B /* AchievementModel.swift in Sources */,
+				6362EB5F2AE28B66004703BB /* Time.swift in Sources */,
 				6365D2F52AE120310019170B /* MemoryViewModel.swift in Sources */,
 				6365D2F12AE11E690019170B /* MemoriesView.swift in Sources */,
 				63D5219D2ADFE53A00EAE4BC /* ChallengeModel.swift in Sources */,
 				6365D2F72AE120D10019170B /* MemoryDetailedView.swift in Sources */,
+				632AF4252AEAD63A00559D23 /* Memory.swift in Sources */,
 				6388B7052ADE940300CCA6B6 /* ContentView.swift in Sources */,
 				6365D2F92AE122930019170B /* AchievementsViewModel.swift in Sources */,
+				632AF4232AEA7A8400559D23 /* MemoryModel.xcdatamodeld in Sources */,
 				6365D2FB2AE124420019170B /* AchievementDetailedView.swift in Sources */,
 				6365D3022AE127490019170B /* ChallengeDetailedView.swift in Sources */,
 				6365D2EF2AE118A10019170B /* ChallengeViewModel.swift in Sources */,
@@ -347,6 +363,7 @@
 				DEVELOPMENT_TEAM = 5Y7P52GGAD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +393,7 @@
 				DEVELOPMENT_TEAM = 5Y7P52GGAD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to upload your amazing pics of the challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -416,6 +434,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		632AF4212AEA7A8400559D23 /* MemoryModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				632AF4222AEA7A8400559D23 /* MemoryModel.xcdatamodel */,
+			);
+			currentVersion = 632AF4222AEA7A8400559D23 /* MemoryModel.xcdatamodel */;
+			path = MemoryModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6388B6F72ADE940300CCA6B6 /* Project object */;
 }

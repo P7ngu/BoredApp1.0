@@ -6,32 +6,43 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct MemoriesView: View {
     var viewmodel = MemoryViewModel()
+    //var completedChallenges = MemoryViewModel().checkCompletedChallenges(context: modelContext)
+    
+    @Query var memories: [Memory]
+    @Query var challengess: [Challenge]
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
-        
-        NavigationStack{
-            List {
-                ForEach(viewmodel.memories){ memory in
-                    
-                    NavigationLink{
-                        MemoryDetailedView(memory: memory)
+        ZStack{
+            Color.pink.ignoresSafeArea().opacity(0.5)
+            NavigationStack{
+                List {
+                    ForEach(memories){ memory in
                         
-                    } label: {
-                        HStack {
-                            //opposite to VStack, there is also ZStack
-                            Image(systemName: "puzzlepiece.extension.fill")
-                                .imageScale(.large)
-                                .foregroundStyle(.blue);
-                            Text (memory.name).bold()
-                           
-                        }.padding()
+                        NavigationLink{
+                            MemoryDetailedView(memory: memory)
+                            
+                        } label: {
+                            HStack {
+                                //opposite to VStack, there is also ZStack
+                                Image(systemName: "checkmark.seal.fill")
+                                    .imageScale(.large)
+                                    .foregroundStyle(.blue);
+                                Text (memory.name).bold()
+                                
+                            }.padding()
+                            
+                            
+                        }
+                        //.padding()
                     }
-                    //.padding()
-                }
-            }.navigationTitle("Memories")
+                }.navigationTitle("Memories")
+            }
         }
     }
 }
