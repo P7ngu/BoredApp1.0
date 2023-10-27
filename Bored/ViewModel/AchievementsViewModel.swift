@@ -57,6 +57,8 @@ class AchievementsViewModel{
         
         for achievement in achievements {
             var updatedCompletitionStatus = ((numOfCompletedChallenges) / (achievement.completitionMaxPoints))
+            print("The number of completed challenge is: ")
+            print(numOfCompletedChallenges)
             
             //print(updatedCompletitionStatus)
             

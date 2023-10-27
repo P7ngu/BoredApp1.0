@@ -18,6 +18,13 @@ class ChallengeViewModel {
         self.modelContext = modelContext
     }
     
+    func fillDatabaseWithChallenges() -> [Challenge]{
+        for challenge in challenges {
+            modelContext.insert(challenge)
+            print("Just inserted a challenge into the db")
+        }
+        return challenges
+    }
     func getChallengeList () -> [Challenge]{
         return challenges
     }
