@@ -54,23 +54,32 @@ struct ContentView: View {
                                             }
                                             
                                         }.foregroundStyle(Color.blue)
+                                            .padding(20)
                                     }
                                     
                                     VStack{
                                        
-                                            Text("SPOILER ALERT: take a look at our future challenges").font(.title3)
+                                            
                                         if challengess.isEmpty
                                         {
                                             var challenges = viewmodel.fillDatabaseWithChallenges()
                                         }
-                                            ForEach (challengess) {challenge in
-                                              
-                                                
-                                                HStack{
-                                                    Text(challenge.name)
+                                        GroupBox{
+                                            Text("SPOILER ALERT: take a look at our future challenges").font(.title3)
+                                            VStack{
+                                                ForEach (challengess) {challenge in
+                                                    GroupBox{
+                                                        HStack{
+                                                            Image(challenge.imageName)
+                                                                .resizable()
+                                                                .frame(width: 150, height: 150)
+                                                            Text(challenge.name)
+                                                        }
+                                                    }
                                                 }
+                                            }
                                         
-                                    }
+                                        }.padding(20)
                                 }
                                 
                             }
