@@ -34,9 +34,9 @@ struct MemoryDetailedView: View {
                                         Label("Your notes:", systemImage: "pencil.line")
                             ){
                                 
-                                TextField("Notes", text: $memory.notes, prompt: Text("Please input your notes"), axis: .vertical)
+                                TextField("Notes", text: $memory.notes, prompt: Text("You haven't written any notes yet, maybe try now!"), axis: .vertical)
                                     .focused($isFocused)
-                                    .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                                    //.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                     .foregroundStyle(.gray)
                                     .foregroundColor(Color.gray)
                                 
