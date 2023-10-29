@@ -20,18 +20,14 @@ struct AchievementsView: View {
    
     
     var body: some View {
-        
         NavigationStack{
             List {
-                
                 ForEach(achievements){ achievement in
                     
                     NavigationLink{
-                        AchievementDetailedView(achievement: achievement)
-                        
+                        AchievementDetailedView(achievement: achievement) 
                     } label: {
                         HStack{
-                            
                             Image(achievement.imageName)
                                 .resizable()
                                 .frame(width: 50, height: 60)
@@ -41,8 +37,6 @@ struct AchievementsView: View {
                             
                             VStack{
                                 HStack {
-                                    //opposite to VStack, there is also ZStack
-                                    
                                     Text (achievement.name).bold()
                                         .scaledToFill()
                                     

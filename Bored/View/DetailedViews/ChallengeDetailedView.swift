@@ -99,10 +99,19 @@ struct ChallengeDetailedView: View {
             }.navigationTitle(challenge.name)
                 .toolbar{
                     Button{
-                        isPickerShowing = true
+                        if(challenge.completed == true){
+                            isPickerShowing = false
+                        } else{
+                            isPickerShowing = true
+                        }
                     } label: {
                         Text("")
-                        Image(systemName: "photo.badge.plus")
+                        if(challenge.completed == true){
+                            Image(systemName: "")
+                        } else{
+                            Image(systemName: "photo.badge.plus")
+                        }
+                       
                     }
                     .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
                         ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
