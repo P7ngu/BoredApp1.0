@@ -66,7 +66,7 @@ struct ChallengeDetailedView: View {
                                                     .foregroundColor(Color.gray)
                                                     .focused($isFocused)
                                                 
-                                                Button("Save notes") {
+                                                Button("Done!") {
                                                     let notes = userNotes
                                                     
                                                     MemoryViewModel(challenges: challenges).convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: notes)

@@ -89,7 +89,7 @@ struct ContentView: View {
                                             var challenges = viewmodel.fillDatabaseWithChallenges()
                                         }
                                         GroupBox{
-                                            Text("SPOILER ALERT: take a look at our future challenges").font(.title3)
+                                            Text("Up to come: take a look at our future challenges").font(.title3)
                                             VStack{
                                                 ForEach (challengess) {challenge in
                                                     GroupBox{
