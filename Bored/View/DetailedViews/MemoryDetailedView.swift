@@ -40,7 +40,7 @@ struct MemoryDetailedView: View {
                                     .foregroundStyle(.gray)
                                     .foregroundColor(Color.gray)
                                 
-                                Button("Update notes") {
+                                Button("Done") {
                                     let notes = memory.notes
                                     // MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: memory.notes)
                                     showingConfirmation = true
