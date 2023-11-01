@@ -40,7 +40,7 @@ struct ChallengeDetailedView: View {
                                 Image(challenge.imageName)
                                     .resizable()  //.aspectRatio(contentMode: .fit)
                                 // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                    .frame(width: 250, height: 250)
+                                    .frame(width: 230, height: 230)
                                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 
                                 if (selectedImage != nil){
@@ -48,12 +48,13 @@ struct ChallengeDetailedView: View {
                                         .resizable()
                                     //.aspectRatio(contentMode: .fit)
                                     // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                        .frame(width: 250, height: 250)
+                                        .frame(width: 230, height: 230)
                                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 }
                             }
                             Text(challenge.content)
                                 .font(.callout).padding()
+                            
                             ZStack{
                                 ForEach (challenges) { chall in
                                     if (chall.name == challenge.name){

@@ -45,11 +45,11 @@ struct MemoryDetailedView: View {
                                     // MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: memory.notes)
                                     showingConfirmation = true
                                     
-                                }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                                    Button("OK", role: .cancel) {
-                                        showingConfirmation = false
-                                    }
-                                }
+                                }//.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                  //  Button("OK", role: .cancel) {
+                                   //     showingConfirmation = false
+                                  // }
+                               // }//
                             }
                         }
                     }
