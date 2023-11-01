@@ -40,7 +40,7 @@ struct ChallengeDetailedView: View {
                                 Image(challenge.imageName)
                                     .resizable()  //.aspectRatio(contentMode: .fit)
                                 // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                    .frame(width: 230, height: 230)
+                                    .frame(width: 150, height: 150)
                                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 
                                 if (selectedImage != nil){
@@ -48,7 +48,7 @@ struct ChallengeDetailedView: View {
                                         .resizable()
                                     //.aspectRatio(contentMode: .fit)
                                     // .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                        .frame(width: 230, height: 230)
+                                        .frame(width: 150, height: 150)
                                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                 }
                             }
@@ -73,7 +73,7 @@ struct ChallengeDetailedView: View {
                                                         chall.completed = true
                                                         challenge.completed = true
                                                         
-                                                    }    
+                                                    }
                                                     TextField("Notes", text: $userNotes, prompt: Text("Please input your notes"), axis: .vertical)
                                                         .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                                                         .foregroundStyle(.gray)
