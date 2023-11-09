@@ -40,16 +40,16 @@ struct MemoryDetailedView: View {
                                     .foregroundStyle(.gray)
                                     .foregroundColor(Color.gray)
                                 
-                                Button("Update notes") {
+                                Button("Done") {
                                     let notes = memory.notes
                                     // MemoryViewModel().convertChallengeIntoMemory(challenge: challenge, context: modelContext, notes: memory.notes)
                                     showingConfirmation = true
                                     
-                                }.alert("Notes saved!", isPresented: $showingConfirmation) {
-                                    Button("OK", role: .cancel) {
-                                        showingConfirmation = false
-                                    }
-                                }
+                                }//.alert("Notes saved!", isPresented: $showingConfirmation) {
+                                  //  Button("OK", role: .cancel) {
+                                   //     showingConfirmation = false
+                                  // }
+                               // }//
                             }
                         }
                     }
